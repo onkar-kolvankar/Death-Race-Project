@@ -1,5 +1,88 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2052094517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2052094518}
+  - component: {fileID: 2052094520}
+  - component: {fileID: 2052094519}
+  m_Layer: 0
+  m_Name: Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2052094518
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052094517}
+  m_LocalRotation: {x: 0.15476485, y: -0.010373281, z: 0.001625078, w: 0.98789555}
+  m_LocalPosition: {x: -0.22244263, y: 2.3841054, z: -7.8185067}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 938073104426276560}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &2052094520
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052094517}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0.5
+    y: 0.5
+    width: 0.5
+    height: 0.5
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!81 &2052094519
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052094517}
+  m_Enabled: 1
 --- !u!1 &3628004632178786493
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,6 +176,7 @@ GameObject:
   - component: {fileID: 347943689156660916}
   - component: {fileID: 4173066042535660138}
   - component: {fileID: 4173066042535660137}
+  - component: {fileID: 2838818458672333325}
   m_Layer: 0
   m_Name: Cargo Van
   m_TagString: Player
@@ -114,6 +198,7 @@ Transform:
   - {fileID: 4316637108187040717}
   - {fileID: 4316637108889932142}
   - {fileID: 4754623042792935193}
+  - {fileID: 2052094518}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -195,6 +280,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.4489306, y: 0.93984425, z: 2.9529347}
   m_Center: {x: 0.003744781, y: 0.045763373, z: 0.10018349}
+--- !u!114 &2838818458672333325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4173066042535660136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a835ff74a5a7284980f56c207b62e12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxTorque: 1000
+  maxSteer: 1400
+  constantMultipleFactorTorque: 100
+  wheelColliderLF: {fileID: 4316637107358706929}
+  wheelColliderLB: {fileID: 4316637108800743466}
+  wheelColliderRF: {fileID: 4316637107292866965}
+  wheelColliderRB: {fileID: 4316637108782598149}
+  meshWheelLF: {fileID: 7079205463153743305}
+  meshWheelLB: {fileID: 4316637107740327001}
+  meshWheelRF: {fileID: 2924013651542486915}
+  meshWheelRB: {fileID: 4316637108330551809}
+  centerOfMassObj: {fileID: 4754623042792935193}
 --- !u!1 &4316637107292866963
 GameObject:
   m_ObjectHideFlags: 0
