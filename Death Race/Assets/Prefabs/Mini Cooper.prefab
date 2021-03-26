@@ -598,7 +598,7 @@ GameObject:
   - component: {fileID: 7077449394442334677}
   m_Layer: 0
   m_Name: Mini Cooper
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
