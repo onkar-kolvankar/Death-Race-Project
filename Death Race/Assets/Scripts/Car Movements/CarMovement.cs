@@ -1,44 +1,104 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CarMovement : MonoBehaviour
 {
-    float verticalAxisInput, horizontalAxisInput;
-    [SerializeField] float maxTorque = 1000f;
-    [SerializeField] float maxSteer = 1400f;
-    [SerializeField] float constantMultipleFactorTorque = 100f;
+    //
+    public float lapStartTime;
+    // we set bestTime to infinity so that first round will have best time.
+    public float bestTime = 1000000000f;
 
-    string torqueAxis = "Vertical";
-    string turningAxis = "Horizontal";
+    public Text currentLapTimeBox;
+    public Text bestLapTimeBox;
+    //
 
-    [SerializeField] WheelCollider wheelColliderLF;
-    [SerializeField] WheelCollider wheelColliderLB;
-    [SerializeField] WheelCollider wheelColliderRF;
-    [SerializeField] WheelCollider wheelColliderRB;
 
-    [SerializeField] Transform meshWheelLF;
-    [SerializeField] Transform meshWheelLB;
-    [SerializeField] Transform meshWheelRF;
-    [SerializeField] Transform meshWheelRB;
+    // used to identify which car it is and accordingly use Vertical and Horizontal axis.
+    public int o_playerNumber = 1;
 
-    [SerializeField] Transform centerOfMassObj;
+    public int o_lapRem = 3;
+
+    float o_verticalAxisInput, o_horizontalAxisInput;
+    [SerializeField] float o_maxTorque = 1000f;
+    [SerializeField] float o_maxSteer = 1400f;
+    [SerializeField] float o_constantMultipleFactorTorque = 100f;
+
+    private string o_torqueAxis, o_turningAxis;
+
+    [SerializeField] WheelCollider o_wheelColliderLF;
+    [SerializeField] WheelCollider o_wheelColliderRF;
+    [SerializeField] WheelCollider o_wheelColliderLB;
+    [SerializeField] WheelCollider o_wheelColliderRB;
+
+    [SerializeField] Transform o_meshWheelLF;
+    [SerializeField] Transform o_meshWheelRF;
+    [SerializeField] Transform o_meshWheelLB;
+    [SerializeField] Transform o_meshWheelRB;
+
+    [SerializeField] Transform o_centerOfMassObj;
 
     void Start()
     {
-        Rigidbody rigidbodyCar = gameObject.GetComponent<Rigidbody>();
-        rigidbodyCar.centerOfMass = centerOfMassObj.localPosition;
+        Rigidbody o_rigidbodyCar = gameObject.GetComponent<Rigidbody>();
+        o_rigidbodyCar.centerOfMass = o_centerOfMassObj.localPosition;
+
+        o_torqueAxis = "Vertical" + o_playerNumber;
+        o_turningAxis = "Horizontal" + o_playerNumber;
 
     }
 
     void Update()
     {
+        CalUpdateLapTime();
+        GetInput();
+    }
 
+    // ----------------LapTimeManager-------------
+    private void OnTriggerEnter(Collider other)
+    {
+        // Here you need to check if it is first lap or not
+        if (other.CompareTag("StartLineTrigger"))
+        {
+            CheckCurrBestLapTime();
+        }
+    }
+
+    private void CheckCurrBestLapTime()
+    {
+        // Here check if the lapStartTime is less than Best time
+        if (lapStartTime < bestTime)
+        {
+            bestTime = lapStartTime;
+        }
+        // Set the lapStartTime = 0 so you can cal lap time of this lap
+        lapStartTime = 0f;
+        UpdateLapTimeUI();
+    }
+
+    private void UpdateLapTimeUI()
+    {
+        // Update the Lap time UI
+        currentLapTimeBox.text = lapStartTime.ToString();
+        bestLapTimeBox.text = bestTime.ToString();
+    }
+
+    //------------------------------------
+
+
+    private void CalUpdateLapTime()
+    {
+        // Here we are adding the time to the lapStartTime
+        lapStartTime += Time.deltaTime;
+
+        // Update the Lap time UI
+        currentLapTimeBox.text = lapStartTime.ToString();
     }
 
     private void FixedUpdate()
     {
-        GetInput();
+       // GetInput();
         AddTorqueSteer();
         AlignWheelMeshToCollider();
 
@@ -46,24 +106,25 @@ public class CarMovement : MonoBehaviour
 
     private void GetInput()
     {
-        verticalAxisInput = Input.GetAxis(torqueAxis);
-        horizontalAxisInput = Input.GetAxis(turningAxis);
+        o_verticalAxisInput = Input.GetAxis(o_torqueAxis);
+        o_horizontalAxisInput = Input.GetAxis(o_turningAxis);
     }
+   
 
     private void AddTorqueSteer()
     {
-        wheelColliderLB.motorTorque = verticalAxisInput * maxTorque * Time.deltaTime * constantMultipleFactorTorque;
-        wheelColliderRB.motorTorque = verticalAxisInput * maxTorque * Time.deltaTime * constantMultipleFactorTorque;
+        o_wheelColliderLB.motorTorque = o_verticalAxisInput * o_maxTorque * Time.deltaTime * o_constantMultipleFactorTorque;
+        o_wheelColliderRB.motorTorque = o_verticalAxisInput * o_maxTorque * Time.deltaTime * o_constantMultipleFactorTorque;
 
-        wheelColliderLF.steerAngle = horizontalAxisInput * maxSteer * Time.deltaTime;
-        wheelColliderRF.steerAngle = horizontalAxisInput * maxSteer * Time.deltaTime;
+        o_wheelColliderLF.steerAngle = o_horizontalAxisInput * o_maxSteer * Time.deltaTime;
+        o_wheelColliderRF.steerAngle = o_horizontalAxisInput * o_maxSteer * Time.deltaTime;
     }
     private void AlignWheelMeshToCollider()
     {
-        AlignSingleWheelMesh(meshWheelLF, wheelColliderLF);
-        AlignSingleWheelMesh(meshWheelLB, wheelColliderLB);
-        AlignSingleWheelMesh(meshWheelRF, wheelColliderRF);
-        AlignSingleWheelMesh(meshWheelRB, wheelColliderRB);
+        AlignSingleWheelMesh(o_meshWheelLF, o_wheelColliderLF);
+        AlignSingleWheelMesh(o_meshWheelLB, o_wheelColliderLB);
+        AlignSingleWheelMesh(o_meshWheelRF, o_wheelColliderRF);
+        AlignSingleWheelMesh(o_meshWheelRB, o_wheelColliderRB);
     }
 
     private void AlignSingleWheelMesh(Transform wheelMesh, WheelCollider wheelCollider)

@@ -678,7 +678,6 @@ GameObject:
   - component: {fileID: 4943130077954124488}
   - component: {fileID: 7077449394442334679}
   - component: {fileID: 7077449394442334678}
-  - component: {fileID: 7077449394442334677}
   - component: {fileID: 138367338}
   m_Layer: 0
   m_Name: Mini Cooper
@@ -780,21 +779,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.4467251, y: 0.4931662, z: 2.65056}
-  m_Center: {x: -0.0037113428, y: 0.049119234, z: 0.21170855}
---- !u!65 &7077449394442334677
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7077449394442334676}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.4504414, y: 0.31850386, z: 1.617451}
-  m_Center: {x: -0.005569458, y: 0.4337479, z: -0.107886314}
+  m_Size: {x: 1.4467251, y: 0.81594634, z: 2.65056}
+  m_Center: {x: -0.0037113428, y: 0.2105093, z: 0.21170855}
 --- !u!114 &138367338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -807,18 +793,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a835ff74a5a7284980f56c207b62e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTorque: 1000
-  maxSteer: 1600
-  constantMultipleFactorTorque: 100
-  wheelColliderLF: {fileID: 4211986156672554380}
-  wheelColliderLB: {fileID: 4211986155094448649}
-  wheelColliderRF: {fileID: 4211986155478588096}
-  wheelColliderRB: {fileID: 4211986154878706049}
-  meshWheelLF: {fileID: 518166955332256712}
-  meshWheelLB: {fileID: 4211986156545115153}
-  meshWheelRF: {fileID: 897642321125326943}
-  meshWheelRB: {fileID: 4211986155539695532}
-  centerOfMassObj: {fileID: 5180593772290915610}
+  o_playerNumber: 1
+  o_lapCount: 3
+  o_maxTorque: 1000
+  o_maxSteer: 1400
+  o_constantMultipleFactorTorque: 100
+  o_wheelColliderLF: {fileID: 4211986156672554380}
+  o_wheelColliderRF: {fileID: 4211986155478588096}
+  o_wheelColliderLB: {fileID: 4211986155094448649}
+  o_wheelColliderRB: {fileID: 4211986154878706049}
+  o_meshWheelLF: {fileID: 518166955332256712}
+  o_meshWheelRF: {fileID: 897642321125326943}
+  o_meshWheelLB: {fileID: 4211986156545115153}
+  o_meshWheelRB: {fileID: 4211986155539695532}
+  o_centerOfMassObj: {fileID: 5180593772290915610}
 --- !u!1 &7730728972912593039
 GameObject:
   m_ObjectHideFlags: 0
