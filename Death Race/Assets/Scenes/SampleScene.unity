@@ -136,6 +136,10 @@ PrefabInstance:
       propertyPath: currentLapTimeBox
       value: 
       objectReference: {fileID: 1837851473}
+    - target: {fileID: 138367338, guid: 2417f27402f1f2548ab3f1e3b6693778, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 53890664453573667, guid: 2417f27402f1f2548ab3f1e3b6693778,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -218,6 +222,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2417f27402f1f2548ab3f1e3b6693778, type: 3}
+--- !u!1 &153395269 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7077449394442334676, guid: 2417f27402f1f2548ab3f1e3b6693778,
+    type: 3}
+  m_PrefabInstance: {fileID: 55673822}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &153395276 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 53890664453573667, guid: 2417f27402f1f2548ab3f1e3b6693778,
@@ -292,8 +302,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5c36c55724ad7544baa42f82a243723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countDownUI: {fileID: 0}
   countDownUItext: {fileID: 281698688}
+  playerObj: {fileID: 153395269}
 --- !u!4 &188201788
 Transform:
   m_ObjectHideFlags: 0

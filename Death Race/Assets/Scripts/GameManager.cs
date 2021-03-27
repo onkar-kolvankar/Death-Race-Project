@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     // This field will be initialized when we select Single player/ multiplayer.
     [SerializeField] int o_totalPlayerCount = 1;
+    
 
     // Start is called before the first frame update
     void Start()

@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class InputController : MonoBehaviour
 {
-    float forwardInput , turningInput;
+
+    float forwardInputPlayer1 , turningInputPlayer2;
     void Update()
     {
-       // if (Input.GetKey(KeyCode.w)) { 
-       //     forwardInput = 
-       // }
+       
     }
 
 }

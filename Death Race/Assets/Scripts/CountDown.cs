@@ -5,16 +5,18 @@ using UnityEngine.UI;
 
 public class CountDown : MonoBehaviour
 {
-    public GameObject countDownUI;
     //public AudioSource GetReady;
     //public AudioSource GoAudio;
     //public GameObject LapTimer;
     //public GameObject CarControls;
     public Text countDownUItext;
+    [SerializeField] GameObject playerObj;
+    CarMovement playerCarMovementScript;
 
      
     void Start()
     {
+        playerCarMovementScript = playerObj.GetComponent<CarMovement>();
         StartCoroutine(StartCountdown());
     }
 
@@ -27,10 +29,15 @@ public class CountDown : MonoBehaviour
         countDownUItext.text = "1";
         yield return new WaitForSeconds(1f);
         countDownUItext.text = "GO..";
+        EnablePlayerCarMovementScript();
         yield return new WaitForSeconds(0.5f);
         countDownUItext.text = null;
         
 
+    }
+
+    void EnablePlayerCarMovementScript() {
+        playerCarMovementScript.enabled = true;
     }
 
 
