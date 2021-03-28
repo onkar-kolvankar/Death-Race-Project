@@ -677,7 +677,7 @@ GameObject:
   - component: {fileID: 6560264223101266614}
   - component: {fileID: 5009844063244804818}
   m_Layer: 0
-  m_Name: Cargo Van 1
+  m_Name: Cargo Van
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -786,15 +786,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6560264223101266615}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a835ff74a5a7284980f56c207b62e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lapStartTime: 0
-  bestTime: 1e+9
-  currentLapTimeBox: {fileID: 0}
-  bestLapTimeBox: {fileID: 0}
   o_playerNumber: 1
   o_lapRem: 3
   o_maxTorque: 1000

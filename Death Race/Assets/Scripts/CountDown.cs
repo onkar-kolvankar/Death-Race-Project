@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,13 +11,23 @@ public class CountDown : MonoBehaviour
     //public GameObject LapTimer;
     //public GameObject CarControls;
     public Text countDownUItext;
-    [SerializeField] GameObject playerObj;
+    //[SerializeField] GameObject playerObj;
+
     CarMovement playerCarMovementScript;
 
-     
+
+
+
+
     void Start()
     {
-        playerCarMovementScript = playerObj.GetComponent<CarMovement>();
+        // this line was used when I had the car in the scene already. so i could have assigned the carObj and then got its CarMovement script
+        // But i am using prefabs so i have to use another way. 
+        // playerCarMovementScript = playerObj.GetComponent<CarMovement>();
+
+        gameObject.GetComponent<LapTimeManager>().enabled = false;
+
+        playerCarMovementScript = FindObjectOfType<CarMovement>();
         StartCoroutine(StartCountdown());
     }
 
@@ -30,10 +41,16 @@ public class CountDown : MonoBehaviour
         yield return new WaitForSeconds(1f);
         countDownUItext.text = "GO..";
         EnablePlayerCarMovementScript();
+        EnableLapTimeManagerScript();
         yield return new WaitForSeconds(0.5f);
         countDownUItext.text = null;
         
 
+    }
+
+    private void EnableLapTimeManagerScript()
+    {
+        gameObject.GetComponent<LapTimeManager>().enabled = true;
     }
 
     void EnablePlayerCarMovementScript() {

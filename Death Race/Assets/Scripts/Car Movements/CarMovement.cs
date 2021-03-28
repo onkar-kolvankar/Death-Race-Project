@@ -5,14 +5,18 @@ using UnityEngine.UI;
 
 public class CarMovement : MonoBehaviour
 {
-    //
+    /*//
     public float lapStartTime;
     // we set bestTime to infinity so that first round will have best time.
     public float bestTime = 1000000000f;
 
     public Text currentLapTimeBox;
     public Text bestLapTimeBox;
-    //
+    //*/
+
+    // obj to Lap timer
+    GameObject o_countDownObj;
+    LapTimeManager o_lapTimeManager;
 
 
     // used to identify which car it is and accordingly use Vertical and Horizontal axis.
@@ -39,6 +43,22 @@ public class CarMovement : MonoBehaviour
 
     [SerializeField] Transform o_centerOfMassObj;
 
+    GameManager o_gameManager;
+
+    bool isSinglePlayer;
+    
+
+    private void Awake()
+    {
+        o_gameManager = FindObjectOfType<GameManager>();
+        // required only if 
+        //currentLapTimeBox = FindObjectOfType<Text>().name.Equals("LapTimeBestSecs");
+        o_lapTimeManager = FindObjectOfType<LapTimeManager>();
+
+        isSinglePlayer = o_gameManager.o_gameMode.Equals("Singleplayer");
+
+    }
+
     void Start()
     {
         Rigidbody o_rigidbodyCar = gameObject.GetComponent<Rigidbody>();
@@ -51,7 +71,8 @@ public class CarMovement : MonoBehaviour
 
     void Update()
     {
-        CalUpdateLapTime();
+        // commented to check if we can separate the lap counting code from the car code.
+        //CalUpdateLapTime(); 
         GetInput();
     }
 
@@ -61,40 +82,47 @@ public class CarMovement : MonoBehaviour
         // Here you need to check if it is first lap or not
         if (other.CompareTag("StartLineTrigger"))
         {
-            CheckCurrBestLapTime();
+            // Here you need to give the ref to the Lap counter Obj. if it is Single player and Time lapse mode.
+
+            //CheckCurrBestLapTime();
+
+            if (isSinglePlayer) {
+                o_lapTimeManager.CheckCurrentBestLapTime();
+            }
         }
     }
 
-    private void CheckCurrBestLapTime()
-    {
-        // Here check if the lapStartTime is less than Best time
-        if (lapStartTime < bestTime)
+    // commented to check if we can separate the lap counting code from the car code.
+
+    /*    private void CheckCurrBestLapTime()
         {
-            bestTime = lapStartTime;
+            // Here check if the lapStartTime is less than Best time
+            if (lapStartTime < bestTime)
+            {
+                bestTime = lapStartTime;
+            }
+            // Set the lapStartTime = 0 so you can cal lap time of this lap
+            lapStartTime = 0f;
+            UpdateLapTimeUI();
         }
-        // Set the lapStartTime = 0 so you can cal lap time of this lap
-        lapStartTime = 0f;
-        UpdateLapTimeUI();
-    }
 
-    private void UpdateLapTimeUI()
-    {
-        // Update the Lap time UI
-        currentLapTimeBox.text = lapStartTime.ToString();
-        bestLapTimeBox.text = bestTime.ToString();
-    }
+        private void UpdateLapTimeUI()
+        {
+            // Update the Lap time UI
+            currentLapTimeBox.text = lapStartTime.ToString();
+            bestLapTimeBox.text = bestTime.ToString();
+        }
+
+        private void CalUpdateLapTime()
+        {
+            // Here we are adding the time to the lapStartTime
+            lapStartTime += Time.deltaTime;
+
+            // Update the Lap time UI
+            currentLapTimeBox.text = lapStartTime.ToString();
+        }*/
 
     //------------------------------------
-
-
-    private void CalUpdateLapTime()
-    {
-        // Here we are adding the time to the lapStartTime
-        lapStartTime += Time.deltaTime;
-
-        // Update the Lap time UI
-        currentLapTimeBox.text = lapStartTime.ToString();
-    }
 
     private void FixedUpdate()
     {

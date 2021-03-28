@@ -397,15 +397,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6718491885584373373}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a835ff74a5a7284980f56c207b62e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lapStartTime: 0
-  bestTime: 1e+9
-  currentLapTimeBox: {fileID: 0}
-  bestLapTimeBox: {fileID: 0}
   o_playerNumber: 1
   o_lapRem: 3
   o_maxTorque: 1000
