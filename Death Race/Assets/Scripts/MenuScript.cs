@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class MenuScript : MonoBehaviour
@@ -17,11 +19,13 @@ public class MenuScript : MonoBehaviour
     public RawImage o_RawImageCarSelected;
 
     // textboxes below rawImage component describing the name of the value selected
-    //public GameObject o_TrackSelectedTextbox , o_ModeSelectedTextbox , o_CarSelectedTextbox;
+    public TextMeshPro o_TrackSelectedTextbox , o_ModeSelectedTextbox , o_CarSelectedTextbox;
 
     public Texture[] o_trackImages;
+    public Texture[] o_carImages;
 
-    private int currentTrackTextureIndex = 0;
+    private int o_currentTrackTextureIndex = 0;
+    private int o_currentCarTextureIndex = 0;
 
     
 
@@ -84,30 +88,30 @@ public class MenuScript : MonoBehaviour
     public void o_ShowNextTrack()
     {
 
-        if (currentTrackTextureIndex < o_trackImages.Length - 1) {
-            o_RawImageTrackSelected.texture = o_trackImages[currentTrackTextureIndex + 1];
-            o_TrackSelectedTextbox.text = o_trackImages[currentTrackTextureIndex + 1].name;
-            currentTrackTextureIndex ++;
+        if (o_currentTrackTextureIndex < o_trackImages.Length - 1) {
+            o_RawImageTrackSelected.texture = o_trackImages[o_currentTrackTextureIndex + 1];
+           // o_TrackSelectedTextbox.Text = o_trackImages[o_currentTrackTextureIndex + 1].name;
+            o_currentTrackTextureIndex ++;
         }
         else
         {
-            currentTrackTextureIndex = 0;
-            o_RawImageTrackSelected.texture = o_trackImages[currentTrackTextureIndex];
+            o_currentTrackTextureIndex = 0;
+            o_RawImageTrackSelected.texture = o_trackImages[o_currentTrackTextureIndex];
         }
     }
 
     public void o_ShowPrevTrack()
     {
-        if (currentTrackTextureIndex > 0)
+        if (o_currentTrackTextureIndex > 0)
         {
-            o_RawImageTrackSelected.texture = o_trackImages[currentTrackTextureIndex - 1];
-            o_TrackSelectedTextbox.text = o_trackImages[currentTrackTextureIndex - 1].name;
-            currentTrackTextureIndex--;
+            o_RawImageTrackSelected.texture = o_trackImages[o_currentTrackTextureIndex - 1];
+           // o_TrackSelectedTextbox.text = o_trackImages[o_currentTrackTextureIndex - 1].name;
+            o_currentTrackTextureIndex--;
         }
         else
         {
-            currentTrackTextureIndex = o_trackImages.Length - 1;
-            o_RawImageTrackSelected.texture = o_trackImages[currentTrackTextureIndex];
+            o_currentTrackTextureIndex = o_trackImages.Length - 1;
+            o_RawImageTrackSelected.texture = o_trackImages[o_currentTrackTextureIndex];
         }
 
 
@@ -116,7 +120,7 @@ public class MenuScript : MonoBehaviour
 
     // ------------------------- Car Selection Menu START ------------------------------
 
-    public void o_GoBackToTrackSelection() {
+    public void o_GotoTrackSelection() {
 
 
         o_PanelCarSelectionMenu.SetActive(false);
@@ -125,17 +129,48 @@ public class MenuScript : MonoBehaviour
 
     public void o_ShowNextCar()
     {
-        Debug.Log("Showing next track");
+        if (o_currentCarTextureIndex < o_carImages.Length - 1)
+        {
+            o_RawImageCarSelected.texture = o_carImages[o_currentCarTextureIndex + 1];
+            o_currentCarTextureIndex++;
+        }
+        else
+        {
+            o_currentCarTextureIndex = 0;
+            o_RawImageCarSelected.texture = o_carImages[o_currentCarTextureIndex];
+        }
     }
     public void o_ShowPrevCar()
     {
-        Debug.Log("Showing next track");
+        if (o_currentCarTextureIndex > 0)
+        {
+            o_RawImageCarSelected.texture = o_carImages[o_currentCarTextureIndex - 1];
+            o_currentCarTextureIndex--;
+        }
+        else
+        {
+            o_currentCarTextureIndex = o_carImages.Length - 1;
+            o_RawImageCarSelected.texture = o_carImages[o_currentCarTextureIndex];
+        }
     }
 
-    public void o_Race() { 
+    public void o_StartRace() {
         // set car in the gamemanager.
+        o_gameManager.o_carSelected = o_RawImageCarSelected.texture.name;
+
+        // check which scene needs to be loaded.
+
 
         // Load the scene corresponding to the selected track in the gamemanager.
+        o_DecideSceneToLoad();
+    }
+
+    private void o_DecideSceneToLoad() {
+        string track_selected = o_gameManager.o_trackSelected;
+
+
+        SceneManager.LoadScene(track_selected);
+
 
     }
 

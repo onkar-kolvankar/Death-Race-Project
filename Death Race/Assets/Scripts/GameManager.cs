@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
 
     public string o_gameMode;
     public string o_trackSelected;
+    public string o_carSelected;
 
     //public CarManager[] o_Cars;
 

@@ -334,7 +334,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Mini Cooper
+  m_text: CARGO VAN
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7a610f410a21de44a84c573de955e561, type: 2}
   m_sharedMaterial: {fileID: 7426542193769037708, guid: 7a610f410a21de44a84c573de955e561,
@@ -404,7 +404,7 @@ MonoBehaviour:
   m_margin: {x: -240.2532, y: 0, z: -253.66208, w: 1.883316}
   m_textInfo:
     textComponent: {fileID: 123432270}
-    characterCount: 11
+    characterCount: 9
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
@@ -452,7 +452,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &129820830
 RectTransform:
   m_ObjectHideFlags: 0
@@ -685,7 +685,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &183498945
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3049,7 +3049,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1360156211}
-        m_MethodName: o_GoBackToTrackSelection
+        m_MethodName: o_GotoTrackSelection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3572,7 +3572,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &1360156211
 MonoBehaviour:
@@ -3598,6 +3598,10 @@ MonoBehaviour:
   o_trackImages:
   - {fileID: 2800000, guid: 2496012987f4a5a4db83661c4aad5829, type: 3}
   - {fileID: 2800000, guid: e39cdaa1cecd7c54e9e2297efc9954a8, type: 3}
+  o_carImages:
+  - {fileID: 2800000, guid: eb9bf233a387d894e903c12451f7cfb0, type: 3}
+  - {fileID: 2800000, guid: 1c1c5a03496606847a382de3041ee9cd, type: 3}
+  - {fileID: 2800000, guid: 69b80ee5644523b4fa6b9498f09a5dc2, type: 3}
 --- !u!4 &1360156212
 Transform:
   m_ObjectHideFlags: 0
@@ -4370,7 +4374,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 600, y: 500}
+  m_SizeDelta: {x: 1024, y: 512}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1726712355
 MonoBehaviour:
@@ -4391,7 +4395,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: eb9bf233a387d894e903c12451f7cfb0, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -5983,7 +5987,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1360156211}
-        m_MethodName: o_Race
+        m_MethodName: o_StartRace
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
