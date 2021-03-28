@@ -4860,14 +4860,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   o_totalPlayerCount: 1
   o_lapCountTotal: 3
-  o_car1Prefab: {fileID: 7077449394442334676, guid: 2417f27402f1f2548ab3f1e3b6693778,
+  o_car1Prefab: {fileID: 6560264223101266615, guid: 6e7cdf85064f1ae48a96e74ab02f2852,
     type: 3}
-  o_car2Prefab: {fileID: 6718491885584373373, guid: 4d85fbc9313ab4743b70d41731e4dc3f,
+  o_car2Prefab: {fileID: 7077449394442334676, guid: 2417f27402f1f2548ab3f1e3b6693778,
     type: 3}
-  o_car3Prefab: {fileID: 4173066042535660136, guid: 0e5c693bd0fa46443a084b58f97bbb07,
+  o_car3Prefab: {fileID: 6718491885584373373, guid: 4d85fbc9313ab4743b70d41731e4dc3f,
     type: 3}
   o_gameMode: 
   o_trackSelected: 
+  o_carSelected: 
 --- !u!4 &1793735872
 Transform:
   m_ObjectHideFlags: 0

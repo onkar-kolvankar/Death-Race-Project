@@ -20,17 +20,21 @@ public class GameManager : MonoBehaviour
 
     //public CarManager[] o_Cars;
 
-    
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        // Here we take the gamemanager obj and then initialize singleplayer/ multiplayer accr.
+        // Also we take what car the user has choosen in GameManager and then Instantiate it here at the spawn area.
+
+        int o_gameManagerCount = FindObjectsOfType<GameManager>().Length;
+
+        if (o_gameManagerCount > 1)
+        {
+            Destroy(gameObject);
+        }
+        else {
+            DontDestroyOnLoad(gameObject);
+        }
     }
 }

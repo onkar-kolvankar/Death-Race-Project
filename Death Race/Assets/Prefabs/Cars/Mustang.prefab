@@ -286,7 +286,6 @@ GameObject:
   - component: {fileID: 5029978015629772832}
   - component: {fileID: 6718491885584373374}
   - component: {fileID: 6718491885584373375}
-  - component: {fileID: 6718491885584373372}
   - component: {fileID: 3691554096174957920}
   m_Layer: 0
   m_Name: Mustang
@@ -306,8 +305,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7928560903444138580}
   - {fileID: 7928560903547021023}
+  - {fileID: 7928560903444138580}
   - {fileID: 281039787}
   - {fileID: 963194228}
   m_Father: {fileID: 0}
@@ -389,21 +388,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.4445374, y: 0.5507827, z: 3.2812243}
-  m_Center: {x: 0.0000052452087, y: 0.07792747, z: 0.020492315}
---- !u!65 &6718491885584373372
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6718491885584373373}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.6564567, y: 0.37293005, z: 1.9432114}
-  m_Center: {x: 0.0000052452087, y: 0.48036206, z: -0.24786633}
+  m_Size: {x: 1.4445374, y: 0.87766767, z: 3.2812243}
+  m_Center: {x: 0.0000052452087, y: 0.24136996, z: 0.020492315}
 --- !u!114 &3691554096174957920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,18 +402,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a835ff74a5a7284980f56c207b62e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTorque: 1000
-  maxSteer: 1400
-  constantMultipleFactorTorque: 100
-  wheelColliderLF: {fileID: 7928560903300485364}
-  wheelColliderLB: {fileID: 7928560902596322774}
-  wheelColliderRF: {fileID: 7928560903301874016}
-  wheelColliderRB: {fileID: 7928560902700996616}
-  meshWheelLF: {fileID: 39148788912418198}
-  meshWheelLB: {fileID: 7928560903252034944}
-  meshWheelRF: {fileID: 109696682712636734}
-  meshWheelRB: {fileID: 7928560902261864537}
-  centerOfMassObj: {fileID: 281039787}
+  lapStartTime: 0
+  bestTime: 1e+9
+  currentLapTimeBox: {fileID: 0}
+  bestLapTimeBox: {fileID: 0}
+  o_playerNumber: 1
+  o_lapRem: 3
+  o_maxTorque: 1000
+  o_maxSteer: 1400
+  o_constantMultipleFactorTorque: 100
+  o_wheelColliderLF: {fileID: 7928560903300485364}
+  o_wheelColliderRF: {fileID: 7928560903301874016}
+  o_wheelColliderLB: {fileID: 7928560902596322774}
+  o_wheelColliderRB: {fileID: 7928560902700996616}
+  o_meshWheelLF: {fileID: 39148788912418198}
+  o_meshWheelRF: {fileID: 109696682712636734}
+  o_meshWheelLB: {fileID: 7928560903252034944}
+  o_meshWheelRB: {fileID: 7928560902261864537}
+  o_centerOfMassObj: {fileID: 281039787}
 --- !u!1 &7928560902261864534
 GameObject:
   m_ObjectHideFlags: 0
@@ -864,7 +856,7 @@ Transform:
   - {fileID: 7928560903252034944}
   - {fileID: 7928560902261864537}
   m_Father: {fileID: 4946176590747712627}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7928560903547021020
 GameObject:
@@ -898,5 +890,5 @@ Transform:
   - {fileID: 7928560902596322775}
   - {fileID: 7928560902700996617}
   m_Father: {fileID: 4946176590747712627}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
