@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    GameManager o_GameManager;
+    private void Awake()
+    {   
+        // Here we take the gamemanager obj and then initialize the instantiate Environment prefab named in it.
+        o_GameManager = FindObjectOfType<GameManager>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+
     }
 }
