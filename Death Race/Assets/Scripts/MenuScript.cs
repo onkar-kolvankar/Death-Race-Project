@@ -10,8 +10,10 @@ public class MenuScript : MonoBehaviour
 {
     GameManager o_gameManager;
 
+    // Panel ref for Single player 
     public GameObject o_PanelMainMenu;
     public GameObject o_PanelModTrackSelectionMenu;
+    public GameObject o_PanelModTrackSelectMP;
     public GameObject o_PanelCarSelectionMenu;
 
     public RawImage o_RawImageTrackSelected;
@@ -19,6 +21,7 @@ public class MenuScript : MonoBehaviour
     public RawImage o_RawImageCarSelected;
 
     // textboxes below rawImage component describing the name of the value selected
+    // NOT WORKING
     public TextMeshPro o_TrackSelectedTextbox , o_ModeSelectedTextbox , o_CarSelectedTextbox;
 
     public Texture[] o_trackImages;
@@ -27,15 +30,12 @@ public class MenuScript : MonoBehaviour
     private int o_currentTrackTextureIndex = 0;
     private int o_currentCarTextureIndex = 0;
 
-    
-
     void Start() {
         o_gameManager = FindObjectOfType<GameManager>();
 
-        Debug.Log("called again");
     }
 
-    // --------------- Main Menu -----------------
+    // --------------- Main Menu SINGLE PLAYER-----------------
     public void o_SetSinglePlayerGotoTrackSelection()
     {
         o_gameManager.o_gameMode = "Singleplayer";
@@ -49,6 +49,10 @@ public class MenuScript : MonoBehaviour
     public void o_SetMultiPlayerGotoTrackSelection() {
         o_gameManager.o_gameMode = "Multiplayer";
         o_gameManager.o_totalPlayerCount = 2;
+
+        // Turn off Main menu panel and enable track and mode selection panel for MP.
+        o_PanelMainMenu.SetActive(false);
+        o_PanelModTrackSelectMP.SetActive(true);
 
     }
 
@@ -177,6 +181,7 @@ public class MenuScript : MonoBehaviour
 
     // ------------------------- Car Selection Menu END------------------------------
 
+    
 
 
 }

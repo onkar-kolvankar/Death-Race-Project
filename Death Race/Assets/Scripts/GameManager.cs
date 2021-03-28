@@ -9,17 +9,13 @@ public class GameManager : MonoBehaviour
 
     public int o_lapCountTotal = 3;
 
-    // Initialize the prefabs of the all cars.
-    public GameObject o_car1Prefab;
-    public GameObject o_car2Prefab;
-    public GameObject o_car3Prefab;
-
     public string o_gameMode;
     public string o_trackSelected;
     public string o_carSelected;
 
-    //public CarManager[] o_Cars;
-
+    //------ For Multiplayer ------
+    
+    
 
 
     private void Awake()
