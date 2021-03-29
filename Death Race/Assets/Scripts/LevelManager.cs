@@ -34,16 +34,11 @@ public class LevelManager : MonoBehaviour
         {
             if (o_GameManager.o_totalPlayerCount == 2)          // It will be default fow now.
             {
-                //AssignDualPlayerNo();
                 AssignDualPlayerGameplay();
             }
         }
     }
 
-    private void AssignDualPlayerNo()
-    {
-        throw new NotImplementedException();
-    }
 
     private void AssignSinglePlayerGameplay()
     {
@@ -77,23 +72,55 @@ public class LevelManager : MonoBehaviour
             if (o_GameManager.o_carsSelectedMP[playerCount].Equals("Cargo Van"))
             {
                 o_carCargoVanPrefab.GetComponent<CarMovement>().o_playerNumber = playerCount + 1;
+                // code to adjust camera visuals accord.
+                if (playerCount == 0)
+                {
+                    o_carCargoVanPrefab.GetComponentInChildren<Camera>().rect = new Rect(0f, 0f, 0.5f, 1f);
+                }
+                else if(playerCount == 1)
+                {
+                    o_carCargoVanPrefab.GetComponentInChildren<Camera>().rect = new Rect(0.5f, 0f, 0.5f, 1f);
+                }
+                
+
+
                 Instantiate(o_carCargoVanPrefab, o_multiPlayerSpawnPoints[playerCount].position, o_multiPlayerSpawnPoints[playerCount].rotation);
                 // need to assign the player no to the prefab so it has the corresponding input axes.
                 // However the playerCount starts from 0 but axes from 1 so need to add 1 while assigning.
                 //o_carCargoVanPrefab.GetComponent<CarMovement>().o_playerNumber = playerCount + 1;     // THis is ref to the prefabs of prefabs folder which is not setting player no. in scene clones.
                 
                 // SOL First assign the player no to prefab ref and then instantiate the prefabs in scene.
+
+                
                 
             }
             else if (o_GameManager.o_carsSelectedMP[playerCount].Equals("Mini Cooper"))
             {
                 o_carMiniCooperPrefab.GetComponent<CarMovement>().o_playerNumber = playerCount + 1;
+                // code to adjust camera visuals accord.
+                if (playerCount == 0)
+                {
+                    o_carMiniCooperPrefab.GetComponentInChildren<Camera>().rect = new Rect(0f, 0f, 0.5f, 1f);
+                }
+                else if (playerCount == 1)
+                {
+                    o_carMiniCooperPrefab.GetComponentInChildren<Camera>().rect = new Rect(0.5f, 0f, 0.5f, 1f);
+                }
                 Instantiate(o_carMiniCooperPrefab, o_multiPlayerSpawnPoints[playerCount].position, o_multiPlayerSpawnPoints[playerCount].rotation);
 
             }
             else if (o_GameManager.o_carsSelectedMP[playerCount].Equals("Mustang"))
             {
                 o_carMustangPrefab.GetComponent<CarMovement>().o_playerNumber = playerCount + 1;
+                // code to adjust camera visuals accord.
+                if (playerCount == 0)
+                {
+                    o_carMustangPrefab.GetComponentInChildren<Camera>().rect = new Rect(0f, 0f, 0.5f, 1f);
+                }
+                else if (playerCount == 1)
+                {
+                    o_carMustangPrefab.GetComponentInChildren<Camera>().rect = new Rect(0.5f, 0f, 0.5f, 1f);
+                }
                 Instantiate(o_carMustangPrefab, o_multiPlayerSpawnPoints[playerCount].position, o_multiPlayerSpawnPoints[playerCount].rotation);
 
             }
