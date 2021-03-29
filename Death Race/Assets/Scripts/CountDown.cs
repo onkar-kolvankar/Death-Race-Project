@@ -13,7 +13,7 @@ public class CountDown : MonoBehaviour
     public Text countDownUItext;
     //[SerializeField] GameObject playerObj;
 
-    CarMovement playerCarMovementScript;
+    CarMovement[] playerCarMovementScripts;
 
 
 
@@ -27,7 +27,7 @@ public class CountDown : MonoBehaviour
 
         gameObject.GetComponent<LapTimeManager>().enabled = false;
 
-        playerCarMovementScript = FindObjectOfType<CarMovement>();
+        playerCarMovementScripts = FindObjectsOfType<CarMovement>();
         StartCoroutine(StartCountdown());
     }
 
@@ -54,7 +54,11 @@ public class CountDown : MonoBehaviour
     }
 
     void EnablePlayerCarMovementScript() {
-        playerCarMovementScript.enabled = true;
+
+        foreach (var carMovementScript in playerCarMovementScripts)
+        {
+            carMovementScript.enabled = true; 
+        }
     }
 
 

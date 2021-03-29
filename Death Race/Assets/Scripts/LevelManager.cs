@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -33,10 +34,17 @@ public class LevelManager : MonoBehaviour
         {
             if (o_GameManager.o_totalPlayerCount == 2)          // It will be default fow now.
             {
+                //AssignDualPlayerNo();
                 AssignDualPlayerGameplay();
             }
         }
     }
+
+    private void AssignDualPlayerNo()
+    {
+        throw new NotImplementedException();
+    }
+
     private void AssignSinglePlayerGameplay()
     {
         singlePlayerPanel.SetActive(true);
@@ -68,15 +76,24 @@ public class LevelManager : MonoBehaviour
             // Instantiate the Player 1 car
             if (o_GameManager.o_carsSelectedMP[playerCount].Equals("Cargo Van"))
             {
+                o_carCargoVanPrefab.GetComponent<CarMovement>().o_playerNumber = playerCount + 1;
                 Instantiate(o_carCargoVanPrefab, o_multiPlayerSpawnPoints[playerCount].position, o_multiPlayerSpawnPoints[playerCount].rotation);
+                // need to assign the player no to the prefab so it has the corresponding input axes.
+                // However the playerCount starts from 0 but axes from 1 so need to add 1 while assigning.
+                //o_carCargoVanPrefab.GetComponent<CarMovement>().o_playerNumber = playerCount + 1;     // THis is ref to the prefabs of prefabs folder which is not setting player no. in scene clones.
+                
+                // SOL First assign the player no to prefab ref and then instantiate the prefabs in scene.
+                
             }
             else if (o_GameManager.o_carsSelectedMP[playerCount].Equals("Mini Cooper"))
             {
+                o_carMiniCooperPrefab.GetComponent<CarMovement>().o_playerNumber = playerCount + 1;
                 Instantiate(o_carMiniCooperPrefab, o_multiPlayerSpawnPoints[playerCount].position, o_multiPlayerSpawnPoints[playerCount].rotation);
 
             }
             else if (o_GameManager.o_carsSelectedMP[playerCount].Equals("Mustang"))
             {
+                o_carMustangPrefab.GetComponent<CarMovement>().o_playerNumber = playerCount + 1;
                 Instantiate(o_carMustangPrefab, o_multiPlayerSpawnPoints[playerCount].position, o_multiPlayerSpawnPoints[playerCount].rotation);
 
             }

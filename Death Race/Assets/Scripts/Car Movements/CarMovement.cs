@@ -20,7 +20,7 @@ public class CarMovement : MonoBehaviour
 
 
     // used to identify which car it is and accordingly use Vertical and Horizontal axis.
-    public int o_playerNumber = 1;
+    public int o_playerNumber  = 1; // default value for single player mode.
 
     public int o_lapRem = 3;
 
