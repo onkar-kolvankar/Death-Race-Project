@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
     public string[] o_carsSelectedMP;   // will be initialized when we select the cars.
     public string[] o_playerNames;      // will be used to store player names later on.
 
+    public int o_track1PosTriggersTotal;
+    public int o_track2PosTriggersTotal;
+
     //------ For Multiplayer ------
 
     private void Awake()
