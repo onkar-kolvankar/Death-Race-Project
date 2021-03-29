@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuMP : MonoBehaviour
 {
+    GameManager o_GameManager;
+
     // Panel ref for Multi player
     public GameObject o_PanelMainMenu;
     public GameObject o_PanelModTrackSelectMP;
@@ -26,7 +28,11 @@ public class MenuMP : MonoBehaviour
 
     // ------------------------- Menu Multiplayer START ---------------------------
 
+    void Start()
+    {
+        o_GameManager = FindObjectOfType<GameManager>();
 
+    }
     // --------------1] PanelModeTrackSelectionMP
 
     public void GotoMainMenuMP()
@@ -67,6 +73,7 @@ public class MenuMP : MonoBehaviour
     public void GotoNextCarSelectionMP1()
     {
         // Save the track and mode selected in the GameManager.
+        o_GameManager.o_trackSelected = o_RawImageTrackSelectedMP.texture.name;
 
         o_PanelModTrackSelectMP.SetActive(false);
         o_PanelCarSelectMP1.SetActive(true);
@@ -111,13 +118,14 @@ public class MenuMP : MonoBehaviour
     public void GotoCarSelectionMP2()
     {
         // Save the track and mode selected in the GameManager.
+        o_GameManager.o_carsSelectedMP[0] = o_RawImageCarSelectedMP1.texture.name;
 
         o_PanelCarSelectMP1.SetActive(false);
         o_PanelCarSelectMP2.SetActive(true);
 
     }
 
-    // ---------2] Car selection MP 1-----------
+    // ---------2] Car selection MP 2-----------
     public void GotoCarSelectionMP1()
     {
         o_PanelCarSelectMP2.SetActive(false);
@@ -155,9 +163,10 @@ public class MenuMP : MonoBehaviour
     public void StartRaceMP()
     {
         // Save the track and mode selected in the GameManager.
+        o_GameManager.o_carsSelectedMP[1] = o_RawImageCarSelectedMP2.texture.name;
 
-        
-
+        string track_selected = o_GameManager.o_trackSelected;
+        SceneManager.LoadScene(track_selected);
     }
 
 }

@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // This field will be initialized when we select Single player/ multiplayer.
-    public int o_totalPlayerCount = 1;
-
     public int o_lapCountTotal = 3;
 
-    public string o_gameMode;
-    public string o_trackSelected;
-    public string o_carSelected;
+    public string o_gameMode;           // Singleplayer or Multiplayer
+    public int o_totalPlayerCount = 1;  // This field will be initialized when we select Singleplayer/Multiplayer.
+
+    public string o_trackSelected;      // Track 1 / Track 2 /                      // FOR BOTH SP & MP
+    public string o_carSelected;        // Cargo Van / Mini Cooper / Mustang        // FOR SINGLEPLAYER
+
+    public string[] o_carsSelectedMP;   // will be initialized when we select the cars.
+    public string[] o_playerNames;      // will be used to store player names later on.
 
     //------ For Multiplayer ------
-    
-    
-
 
     private void Awake()
     {

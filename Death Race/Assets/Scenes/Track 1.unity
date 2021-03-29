@@ -1475,14 +1475,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26416856454dd6241956db13e1a6f513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  o_totalPlayerCount: 1
   o_lapCountTotal: 3
-  o_car1Prefab: {fileID: 0}
-  o_car2Prefab: {fileID: 0}
-  o_car3Prefab: {fileID: 0}
   o_gameMode: 
+  o_totalPlayerCount: 1
   o_trackSelected: 
   o_carSelected: 
+  o_carsSelectedMP: []
+  o_playerNames: []
 --- !u!4 &1450815140
 Transform:
   m_ObjectHideFlags: 0
@@ -2692,6 +2691,11 @@ MonoBehaviour:
   singlePlayerPanel: {fileID: 1477637438}
   multiPlayerPanel: {fileID: 934830211}
   singlePlayerSpawnPoint: {fileID: 2146619204}
+  o_multiPlayerSpawnPoint1: {fileID: 0}
+  o_multiPlayerSpawnPoint2: {fileID: 0}
+  o_multiPlayerSpawnPoints:
+  - {fileID: 2146619204}
+  - {fileID: 1764017796}
   o_carCargoVanPrefab: {fileID: 6560264223101266615, guid: 6e7cdf85064f1ae48a96e74ab02f2852,
     type: 3}
   o_carMiniCooperPrefab: {fileID: 7077449394442334676, guid: 2417f27402f1f2548ab3f1e3b6693778,

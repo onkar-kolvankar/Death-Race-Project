@@ -48,7 +48,8 @@ public class MenuScript : MonoBehaviour
 
     public void o_SetMultiPlayerGotoTrackSelection() {
         o_gameManager.o_gameMode = "Multiplayer";
-        o_gameManager.o_totalPlayerCount = 2;
+        o_gameManager.o_totalPlayerCount = 2;       // Taking 2 players by DEFAULT
+        o_gameManager.o_carsSelectedMP = new string[o_gameManager.o_totalPlayerCount]; // Initializing the cars array to DEFAULT
 
         // Turn off Main menu panel and enable track and mode selection panel for MP.
         o_PanelMainMenu.SetActive(false);
