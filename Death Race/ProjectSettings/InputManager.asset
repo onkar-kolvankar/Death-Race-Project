@@ -7,7 +7,7 @@ InputManager:
   m_Axes:
   - serializedVersion: 3
     m_Name: Horizontal1
-    descriptiveName: 
+    descriptiveName: Direction keys for player 1
     descriptiveNegativeName: 
     negativeButton: a
     positiveButton: d
@@ -23,7 +23,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Vertical1
-    descriptiveName: Input Axis for Player 1
+    descriptiveName: Forward Directional axis for Player 1
     descriptiveNegativeName: 
     negativeButton: s
     positiveButton: w
@@ -157,12 +157,12 @@ InputManager:
     positiveButton: right
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 0
-    dead: 0.19
-    sensitivity: 1
-    snap: 0
+    gravity: 3
+    dead: 0.001
+    sensitivity: 3
+    snap: 1
     invert: 0
-    type: 2
+    type: 0
     axis: 0
     joyNum: 0
   - serializedVersion: 3
@@ -173,13 +173,13 @@ InputManager:
     positiveButton: up
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 0
-    dead: 0.19
-    sensitivity: 1
-    snap: 0
-    invert: 1
-    type: 2
-    axis: 1
+    gravity: 3
+    dead: 0.001
+    sensitivity: 3
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
     joyNum: 0
   - serializedVersion: 3
     m_Name: Fire1
