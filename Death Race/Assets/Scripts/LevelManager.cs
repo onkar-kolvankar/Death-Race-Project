@@ -21,6 +21,9 @@ public class LevelManager : MonoBehaviour
     public GameObject o_carMiniCooperPrefab;
     public GameObject o_carMustangPrefab;
 
+    // array to store the PosLapTriggers name.
+    
+
 
     private void OnEnable()
     {
