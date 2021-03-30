@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 27423116}
   m_Layer: 0
   m_Name: 3
-  m_TagString: Untagged
+  m_TagString: Checkpoints
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 159203902}
   m_Layer: 0
   m_Name: 2
-  m_TagString: Untagged
+  m_TagString: Checkpoints
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -321,7 +321,7 @@ GameObject:
   - component: {fileID: 189040609}
   m_Layer: 0
   m_Name: 6
-  m_TagString: Untagged
+  m_TagString: Checkpoints
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -414,7 +414,7 @@ GameObject:
   - component: {fileID: 293110564}
   m_Layer: 0
   m_Name: 1
-  m_TagString: Untagged
+  m_TagString: Checkpoints
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -522,8 +522,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b99cc1485c4a2784e8a17de9f0725b26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  n_totalTriggersInTrack: 8
-  n_totalPlayers: 1
+  n_totalTriggersInTrack: 9
+  n_totalPlayers: 2
   n_LapsCompleted: 00000000
   n_TriggersCollected: 00000000
 --- !u!4 &396371651
@@ -951,7 +951,7 @@ GameObject:
   - component: {fileID: 1341937088}
   m_Layer: 0
   m_Name: 4
-  m_TagString: Untagged
+  m_TagString: Checkpoints
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1044,7 +1044,7 @@ GameObject:
   - component: {fileID: 1390981576}
   m_Layer: 0
   m_Name: 5
-  m_TagString: Untagged
+  m_TagString: Checkpoints
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1244,7 +1244,7 @@ GameObject:
   - component: {fileID: 1535825655}
   m_Layer: 0
   m_Name: 0
-  m_TagString: Untagged
+  m_TagString: Checkpoints
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1462,8 +1462,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   n_PlayerNo: 1
-  n_triggerCollided: 0
-  n_prevTriggerCollided: 0
+  n_prevTrigger: 0
+  n_nextTrigger: 1
   n_wrongWayCount: 0
   n_totalTriggersCollided: 0
 --- !u!1 &1904916598
@@ -1480,7 +1480,7 @@ GameObject:
   - component: {fileID: 1904916599}
   m_Layer: 0
   m_Name: 7
-  m_TagString: Untagged
+  m_TagString: Checkpoints
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1573,7 +1573,7 @@ GameObject:
   - component: {fileID: 1905964341}
   m_Layer: 0
   m_Name: 8
-  m_TagString: Untagged
+  m_TagString: Checkpoints
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
