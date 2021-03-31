@@ -20,6 +20,8 @@ public class GameStatus : MonoBehaviour
 
     public int[] n_pos;
 
+    public bool[] n_raceCompleted;             // it stores if a certain player has completed the race or not. // USED FOR MULTIPLAYER
+ 
 
     [SerializeField] TMP_Text ui_textLapvalueSP;
     [SerializeField] TMP_Text ui_textLapvalueMP1;
@@ -28,7 +30,14 @@ public class GameStatus : MonoBehaviour
     [SerializeField] TMP_Text ui_textPosValueMP1;
     [SerializeField] TMP_Text ui_textPosValueMP2;
 
-        
+    // fields for displaying Won , Lost Message.
+    [SerializeField] Text ui_textWinLooseMsgSP;
+
+    //[SerializeField] TMP_Text ui_textWinLooseMsgMP1;
+   // [SerializeField] TMP_Text ui_textWinLooseMsgMP2;
+    [SerializeField] Text[] ui_textWinLooseMsgMP;
+
+
 
     private void Awake()
     {
@@ -42,8 +51,11 @@ public class GameStatus : MonoBehaviour
         n_TriggersCollected = new int[n_totalPlayers];
 
         n_pos = new int[n_totalPlayers];
+        n_raceCompleted = new bool[n_totalPlayers];
 
         n_totalTriggersInTrack = GameObject.FindGameObjectsWithTag("Checkpoints").Length;
+
+
     }
 
 
@@ -73,20 +85,57 @@ public class GameStatus : MonoBehaviour
         UpdatePlayerStatsUI();
     }
 
-    public void CheckWiningStatus()
+    public void CheckWiningStatus()             // It will display the "YOU WON" msg if any player wins.
     {
-        for (int i = 0; i < n_LapsCompleted.Length; i++)
+        if (n_GameManager.o_gameMode == "Singleplayer")
         {
-            if (n_LapsCompleted[i] == n_totalLaps)
+            Debug.Log("Inside Singleplayer condition");
+            if (n_LapsCompleted[0] == n_totalLaps)
             {
-                // Here will be code to display the "YOU WON" msg on appropriate panel.
-                // Also you will make the player car stop and not movable.
+                // Display Win loose msg
+                ui_textWinLooseMsgSP.enabled = true;               // to disable/enable the text.
+                Debug.Log(" SINGLE PLAYER GAME OVER");
+                // Stop the car movement and Inputs
 
-                // ------------------------CODE GOES HERE -------------------------
+                // Display a new GAME OVER panel / GAME OVER SCENE after 2 sec.
 
 
-                Debug.Log("Player " + (i + 1) + " Won");
+
             }
+
+        }
+        else if (n_GameManager.o_gameMode == "Multiplayer" && n_totalPlayers == 2)      // display "YOU WON" on the required screen. and will let the other car finish race.
+        {
+            for (int i = 0; i < n_totalPlayers ; i++)
+            {
+                if (n_LapsCompleted[i] == n_totalLaps)
+                {
+                    // check if other vechile has already completed the race or not.
+                    if (n_raceCompleted[1 - i] == true)
+                    {
+                        // You have lost so it will display the "YOU LOOSE" msg.
+                        ui_textWinLooseMsgMP[i].enabled = true;
+                        ui_textWinLooseMsgMP[i].text = "YOU LOOSE!";
+                        Debug.Log("Player " + i + 1 + " YOU LOOSE");
+                        // set n_raceCompleted[] values
+                        n_raceCompleted[i] = true;
+                        // Stop you car movement and Input
+                    }
+                    else if (n_raceCompleted[1 - i] == false)
+                    {
+                        // you have won the race so display the 'YOU WON' msg.
+                        ui_textWinLooseMsgMP[i].enabled = true;
+                        ui_textWinLooseMsgMP[i].text = "YOU WON!";
+                        Debug.Log("Player " + i + 1 + " YOU WON");
+                        // set n_raceCompleted[] values
+                        n_raceCompleted[i] = true;
+                        // Stop you car movement and Input
+
+
+                    }
+                }
+            }
+
         }
     }
 
@@ -107,5 +156,7 @@ public class GameStatus : MonoBehaviour
 
 
         }
+
+        
     }
 }

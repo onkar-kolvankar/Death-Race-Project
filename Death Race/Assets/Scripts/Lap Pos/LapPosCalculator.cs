@@ -98,8 +98,8 @@ public class LapPosCalculator : MonoBehaviour
                 gameStatus.UpdatePlayerStatsUI();
             }
 
-                gameStatus.CheckWiningStatus();
-        }
+            gameStatus.CheckWiningStatus();
+         }
 
 
 
