@@ -80,7 +80,7 @@ public class CarMovement : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Here you need to check if it is first lap or not
-        if (other.CompareTag("StartLineTrigger"))
+        if (other.CompareTag("Checkpoints") && other.name == "0")
         {
             // Here you need to give the ref to the Lap counter Obj. if it is Single player and Time lapse mode.
 

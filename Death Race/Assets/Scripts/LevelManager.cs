@@ -74,7 +74,11 @@ public class LevelManager : MonoBehaviour
             // Instantiate the Player 1 car
             if (o_GameManager.o_carsSelectedMP[playerCount].Equals("Cargo Van"))
             {
+                // giving Player No to the Prefab's CarMovement and LapPosCalculator Script
                 o_carCargoVanPrefab.GetComponent<CarMovement>().o_playerNumber = playerCount + 1;
+                o_carCargoVanPrefab.GetComponent<LapPosCalculator>().n_PlayerNo = playerCount + 1;
+
+
                 // code to adjust camera visuals accord.
                 if (playerCount == 0)
                 {
@@ -99,7 +103,11 @@ public class LevelManager : MonoBehaviour
             }
             else if (o_GameManager.o_carsSelectedMP[playerCount].Equals("Mini Cooper"))
             {
+                // giving Player No to the Prefab's CarMovement and LapPosCalculator Script
                 o_carMiniCooperPrefab.GetComponent<CarMovement>().o_playerNumber = playerCount + 1;
+                o_carMiniCooperPrefab.GetComponent<LapPosCalculator>().n_PlayerNo = playerCount + 1;
+
+
                 // code to adjust camera visuals accord.
                 if (playerCount == 0)
                 {
@@ -114,7 +122,10 @@ public class LevelManager : MonoBehaviour
             }
             else if (o_GameManager.o_carsSelectedMP[playerCount].Equals("Mustang"))
             {
+                // giving Player No to the Prefab's CarMovement and LapPosCalculator Script
                 o_carMustangPrefab.GetComponent<CarMovement>().o_playerNumber = playerCount + 1;
+                o_carMustangPrefab.GetComponent<LapPosCalculator>().n_PlayerNo = playerCount + 1;
+
                 // code to adjust camera visuals accord.
                 if (playerCount == 0)
                 {

@@ -16,7 +16,7 @@ public class posLapScript : MonoBehaviour
 
     LapPosGameStatus lapPosGameStatus;
 
-    private void Awake()
+    private void OnEnable()
     {
         lapPosGameStatus = FindObjectOfType<LapPosGameStatus>();
         n_totalTriggersInTrack = lapPosGameStatus.n_totalTriggersInTrack;

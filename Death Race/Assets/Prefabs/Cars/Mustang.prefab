@@ -287,6 +287,7 @@ GameObject:
   - component: {fileID: 6718491885584373374}
   - component: {fileID: 6718491885584373375}
   - component: {fileID: 3691554096174957920}
+  - component: {fileID: 1896214580059153260}
   m_Layer: 0
   m_Name: Mustang
   m_TagString: Player
@@ -416,6 +417,23 @@ MonoBehaviour:
   o_meshWheelLB: {fileID: 7928560903252034944}
   o_meshWheelRB: {fileID: 7928560902261864537}
   o_centerOfMassObj: {fileID: 281039787}
+--- !u!114 &1896214580059153260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6718491885584373373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85fcd08b7b77b754eb93e73681533184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  n_PlayerNo: 0
+  n_prevTrigger: 0
+  n_nextTrigger: 1
+  n_wrongWayCount: 0
+  n_totalTriggersCollided: 0
 --- !u!1 &7928560902261864534
 GameObject:
   m_ObjectHideFlags: 0

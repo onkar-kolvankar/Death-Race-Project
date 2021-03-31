@@ -676,6 +676,7 @@ GameObject:
   - component: {fileID: 6560264223101266613}
   - component: {fileID: 6560264223101266614}
   - component: {fileID: 5009844063244804818}
+  - component: {fileID: 698947909584737913}
   m_Layer: 0
   m_Name: Cargo Van
   m_TagString: Player
@@ -805,6 +806,23 @@ MonoBehaviour:
   o_meshWheelLB: {fileID: 6414478737300216966}
   o_meshWheelRB: {fileID: 6414478738733218526}
   o_centerOfMassObj: {fileID: 2529009296402657222}
+--- !u!114 &698947909584737913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6560264223101266615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85fcd08b7b77b754eb93e73681533184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  n_PlayerNo: 0
+  n_prevTrigger: 0
+  n_nextTrigger: 1
+  n_wrongWayCount: 0
+  n_totalTriggersCollided: 0
 --- !u!1 &7125548902335552234
 GameObject:
   m_ObjectHideFlags: 0
