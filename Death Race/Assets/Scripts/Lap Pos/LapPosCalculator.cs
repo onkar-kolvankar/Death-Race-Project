@@ -29,9 +29,7 @@ public class LapPosCalculator : MonoBehaviour
          if (gameManager.o_gameMode == "Multiplayer" && other.gameObject.CompareTag("Checkpoints"))
          {
         
-            string n_triggerCollidedName = other.gameObject.name.ToString();
-            Debug.Log(n_triggerCollidedName);
-            int n_triggerCollided = int.Parse(n_triggerCollidedName);
+            int n_triggerCollided = int.Parse(other.gameObject.name.ToString());
 
             if (n_triggerCollided == n_nextTrigger)
             {

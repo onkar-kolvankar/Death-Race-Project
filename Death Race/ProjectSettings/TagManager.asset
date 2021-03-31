@@ -6,6 +6,8 @@ TagManager:
   tags:
   - StartLineTrigger
   - Checkpoints
+  - DirectionTrigger
+  - DirectionDisplay
   layers:
   - Default
   - TransparentFX

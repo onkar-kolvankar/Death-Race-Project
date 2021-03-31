@@ -451,7 +451,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 480, y: -75}
+  m_AnchoredPosition: {x: 0, y: -110}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &379798401
@@ -1376,7 +1376,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &934830212
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1584,7 +1584,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 2 / 8
+  m_text: 1 / 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7a610f410a21de44a84c573de955e561, type: 2}
   m_sharedMaterial: {fileID: 7426542193769037708, guid: 7a610f410a21de44a84c573de955e561,
@@ -2014,7 +2014,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PLAYER 1
+  m_Text: PLAYER 2
 --- !u!222 &1178129686
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2350,7 +2350,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1477637439
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2873,7 +2873,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 2 / 8
+  m_text: 2 / 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7a610f410a21de44a84c573de955e561, type: 2}
   m_sharedMaterial: {fileID: 7426542193769037708, guid: 7a610f410a21de44a84c573de955e561,
@@ -3340,7 +3340,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -480, y: -75}
+  m_AnchoredPosition: {x: -5, y: -110}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1798653106
@@ -3485,7 +3485,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -154, y: -105}
+  m_AnchoredPosition: {x: -151, y: -92}
   m_SizeDelta: {x: 253.37292, y: 155.59985}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1881991361
@@ -4321,8 +4321,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000024319, y: 199}
-  m_SizeDelta: {x: 159.99963, y: 219.35553}
+  m_AnchoredPosition: {x: 39, y: 199}
+  m_SizeDelta: {x: 509.39, y: 219.35553}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1011400697115794529
 GameObject:
@@ -5441,7 +5441,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   directionSignTexture: {fileID: 21300000, guid: be2a8870bc300474381d734cc18d259d,
     type: 3}
-  directionsImage: {fileID: 1011400697736425508}
+  directionsImageSP: {fileID: 1011400697736425508}
+  directionsImageMP1: {fileID: 379798401}
+  directionsImageMP2: {fileID: 1798653106}
 --- !u!65 &3398187804114827503
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5470,7 +5472,7 @@ GameObject:
   - component: {fileID: 3398187804114827502}
   m_Layer: 0
   m_Name: DirecTrigger2
-  m_TagString: Untagged
+  m_TagString: DirectionTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5568,7 +5570,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   directionSignTexture: {fileID: 21300000, guid: be2a8870bc300474381d734cc18d259d,
     type: 3}
-  directionsImage: {fileID: 1011400697736425508}
+  directionsImageSP: {fileID: 1011400697736425508}
+  directionsImageMP1: {fileID: 379798401}
+  directionsImageMP2: {fileID: 1798653106}
 --- !u!65 &3398187804467431041
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5597,7 +5601,7 @@ GameObject:
   - component: {fileID: 3398187804467431040}
   m_Layer: 0
   m_Name: DirecTrigger3
-  m_TagString: Untagged
+  m_TagString: DirectionTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6268,7 +6272,7 @@ GameObject:
   - component: {fileID: 3398187805333834155}
   m_Layer: 0
   m_Name: DirecTrigger1
-  m_TagString: Untagged
+  m_TagString: DirectionTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6287,7 +6291,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   directionSignTexture: {fileID: 21300000, guid: be2a8870bc300474381d734cc18d259d,
     type: 3}
-  directionsImage: {fileID: 1011400697736425508}
+  directionsImageSP: {fileID: 1011400697736425508}
+  directionsImageMP1: {fileID: 379798401}
+  directionsImageMP2: {fileID: 1798653106}
 --- !u!33 &3398187805381481320
 MeshFilter:
   m_ObjectHideFlags: 0

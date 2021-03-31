@@ -76,7 +76,7 @@ public class GameStatus : MonoBehaviour
         {
             if (n_LapsCompleted[i] == n_totalLaps)
             {
-                Debug.Log("Player " + i + " Won");
+                Debug.Log("Player " + (i + 1) + " Won");
             }
         }
     }

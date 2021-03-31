@@ -5,15 +5,7 @@ using UnityEngine.UI;
 
 public class CarMovement : MonoBehaviour
 {
-    /*//
-    public float lapStartTime;
-    // we set bestTime to infinity so that first round will have best time.
-    public float bestTime = 1000000000f;
-
-    public Text currentLapTimeBox;
-    public Text bestLapTimeBox;
-    //*/
-
+ 
     // obj to Lap timer
     GameObject o_countDownObj;
     LapTimeManager o_lapTimeManager;
@@ -91,38 +83,6 @@ public class CarMovement : MonoBehaviour
             }
         }
     }
-
-    // commented to check if we can separate the lap counting code from the car code.
-
-    /*    private void CheckCurrBestLapTime()
-        {
-            // Here check if the lapStartTime is less than Best time
-            if (lapStartTime < bestTime)
-            {
-                bestTime = lapStartTime;
-            }
-            // Set the lapStartTime = 0 so you can cal lap time of this lap
-            lapStartTime = 0f;
-            UpdateLapTimeUI();
-        }
-
-        private void UpdateLapTimeUI()
-        {
-            // Update the Lap time UI
-            currentLapTimeBox.text = lapStartTime.ToString();
-            bestLapTimeBox.text = bestTime.ToString();
-        }
-
-        private void CalUpdateLapTime()
-        {
-            // Here we are adding the time to the lapStartTime
-            lapStartTime += Time.deltaTime;
-
-            // Update the Lap time UI
-            currentLapTimeBox.text = lapStartTime.ToString();
-        }*/
-
-    //------------------------------------
 
     private void FixedUpdate()
     {
