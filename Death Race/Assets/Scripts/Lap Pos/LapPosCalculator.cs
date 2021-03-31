@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LapPosCalculator : MonoBehaviour
 {
-    public int n_PlayerNo;
+    public int n_PlayerNo;          // Atached on the car prefab and it has player no as 1,2,....
     int n_totalTriggersInTrack;
 
     public int n_prevTrigger;
@@ -26,7 +26,9 @@ public class LapPosCalculator : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-         if (gameManager.o_gameMode == "Multiplayer" && other.gameObject.CompareTag("Checkpoints"))
+         //if (gameManager.o_gameMode == "Multiplayer" && other.gameObject.CompareTag("Checkpoints"))
+         if (other.gameObject.CompareTag("Checkpoints"))
+
          {
         
             int n_triggerCollided = int.Parse(other.gameObject.name.ToString());
@@ -62,10 +64,10 @@ public class LapPosCalculator : MonoBehaviour
                     // now we will set the car to its needed collider position i.e nextTrigger
 
                     GameObject nextTriggerObj = GameObject.Find(n_nextTrigger.ToString());
-
+                    
 
                     gameObject.transform.position = nextTriggerObj.transform.position;
-                    //  gameObject.transform.rotation = nextTriggerObj.transform.rotation;
+                    gameObject.transform.rotation = nextTriggerObj.transform.rotation;
 
                     n_wrongWayCount = 0;
 
@@ -82,16 +84,21 @@ public class LapPosCalculator : MonoBehaviour
 
 
                 gameObject.transform.position = nextTriggerObj.transform.position;
-                //  gameObject.transform.rotation = nextTriggerObj.transform.rotation;
+                gameObject.transform.rotation = nextTriggerObj.transform.rotation;
 
                 n_wrongWayCount = 0;
             }
 
-            if (gameManager.o_gameMode.Equals("Multiplayer")) {
+            if (gameManager.o_gameMode.Equals("Multiplayer"))
+            {
                 gameStatus.CalPlayersPositions();
             }
-            
-            gameStatus.CheckWiningStatus();
+            else if (gameManager.o_gameMode.Equals("Singleplayer")) {
+
+                gameStatus.UpdatePlayerStatsUI();
+            }
+
+                gameStatus.CheckWiningStatus();
         }
 
 

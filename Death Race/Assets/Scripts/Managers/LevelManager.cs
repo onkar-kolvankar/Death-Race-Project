@@ -50,15 +50,24 @@ public class LevelManager : MonoBehaviour
 
         if (o_GameManager.o_carSelected.Equals("Cargo Van"))
         {
+            // giving Player No to the Prefab's CarMovement and LapPosCalculator Script
+            o_carCargoVanPrefab.GetComponent<CarMovement>().o_playerNumber = 1;
+            o_carCargoVanPrefab.GetComponent<LapPosCalculator>().n_PlayerNo = 1;
             Instantiate(o_carCargoVanPrefab, singlePlayerSpawnPoint.position, singlePlayerSpawnPoint.rotation);
         }
         else if (o_GameManager.o_carSelected.Equals("Mini Cooper"))
         {
+            // giving Player No to the Prefab's CarMovement and LapPosCalculator Script
+            o_carMiniCooperPrefab.GetComponent<CarMovement>().o_playerNumber =  1;
+            o_carMiniCooperPrefab.GetComponent<LapPosCalculator>().n_PlayerNo =  1;
             Instantiate(o_carMiniCooperPrefab, singlePlayerSpawnPoint.position, singlePlayerSpawnPoint.rotation);
 
         }
         else if (o_GameManager.o_carSelected.Equals("Mustang"))
         {
+            // giving Player No to the Prefab's CarMovement and LapPosCalculator Script
+            o_carMustangPrefab.GetComponent<CarMovement>().o_playerNumber =  1;
+            o_carMustangPrefab.GetComponent<LapPosCalculator>().n_PlayerNo =  1;
             Instantiate(o_carMustangPrefab, singlePlayerSpawnPoint.position, singlePlayerSpawnPoint.rotation);
 
         }

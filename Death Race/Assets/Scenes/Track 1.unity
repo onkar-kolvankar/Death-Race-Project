@@ -1080,6 +1080,11 @@ MonoBehaviour:
   n_LapsCompleted: 
   n_TriggersCollected: 
   n_pos: 
+  ui_textLapvalueSP: {fileID: 1011400696987049503}
+  ui_textLapvalueMP1: {fileID: 1949107341}
+  ui_textLapvalueMP2: {fileID: 1583686898}
+  ui_textPosValueMP1: {fileID: 988993667}
+  ui_textPosValueMP2: {fileID: 1723852055}
 --- !u!1 &668020746
 GameObject:
   m_ObjectHideFlags: 0
