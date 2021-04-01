@@ -31,12 +31,12 @@ public class GameStatus : MonoBehaviour
     [SerializeField] TMP_Text ui_textPosValueMP2;
 
     // fields for displaying Won , Lost Message.
-    [SerializeField] Text ui_textWinLooseMsgSP;
+    [SerializeField] TMP_Text ui_textWinLooseMsgSP;
 
-    //[SerializeField] TMP_Text ui_textWinLooseMsgMP1;
-   // [SerializeField] TMP_Text ui_textWinLooseMsgMP2;
-    [SerializeField] Text[] ui_textWinLooseMsgMP;
+    [SerializeField] TMP_Text[] ui_textWinLooseMsgMP;
 
+
+  
 
 
     private void Awake()
@@ -158,5 +158,41 @@ public class GameStatus : MonoBehaviour
         }
 
         
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.O)) {
+            try
+            {
+                ui_textWinLooseMsgMP[0].text = "hello world";
+            }
+            catch (System.Exception e) {
+                Debug.Log("Error = " + e.Message);
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            try
+            {
+                ui_textWinLooseMsgMP[0].enabled = false;
+            }
+            catch (System.Exception e)
+            {
+                Debug.Log("Error = " + e.Message);
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            try
+            {
+                ui_textWinLooseMsgMP[0].enabled = true;
+            }
+            catch (System.Exception e)
+            {
+                Debug.Log("Error = " + e.Message);
+            }
+        }
+
     }
 }
