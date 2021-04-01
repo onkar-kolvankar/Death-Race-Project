@@ -22,11 +22,16 @@ public class GameStatus : MonoBehaviour
     public int[] n_pos;
 
     public bool[] n_raceCompleted;             // it stores if a certain player has completed the race or not. // USED FOR MULTIPLAYER
+
+    string n_SceneTrackName;
  
+    
 
     [SerializeField] TMP_Text ui_textLapvalueSP;
     [SerializeField] TMP_Text ui_textLapvalueMP1;
     [SerializeField] TMP_Text ui_textLapvalueMP2;
+
+    [SerializeField] Text ui_textBestTimevalueSP;
 
     [SerializeField] TMP_Text ui_textPosValueMP1;
     [SerializeField] TMP_Text ui_textPosValueMP2;
@@ -62,6 +67,8 @@ public class GameStatus : MonoBehaviour
     private void Start()
     {
         ui_textWinLooseMsgSP.enabled = false;
+
+        n_SceneTrackName = n_GameManager.o_trackSelected;
     }
 
 
@@ -98,11 +105,21 @@ public class GameStatus : MonoBehaviour
             Debug.Log("Inside Singleplayer condition");
             if (n_LapsCompleted[0] == n_totalLaps)
             {
-                // Display The players Best Time for now
-                ui_textWinLooseMsgSP.enabled = true;               // to disable/enable the text.
-                Debug.Log(" SINGLE PLAYER GAME OVER");
-                // Stop the car movement and Inputs
+                // Stop the car movement and Inputs ------CODE HERE --------
 
+                // Display The players Best Time for now
+                // The Best Time of player would have been displayed on the Text in Panel so take it and set it.
+                ui_textWinLooseMsgSP.enabled= true;           // to disable/enable the text.
+                ui_textWinLooseMsgSP.text = "YOUR TIME : " + ui_textBestTimevalueSP.text + " SECS ";
+                Debug.Log(" SINGLE PLAYER GAME OVER");
+
+                // Store the Time in the PlayerPrefs respectively TrackName/SceneName  |  Time float
+                // Only if the earlier stored time is greater than currnt best Time
+                // 10000f is the default time returned when no value is present for the given key.
+                if (PlayerPrefs.GetFloat(n_SceneTrackName,10000f) > float.Parse(ui_textBestTimevalueSP.text)) {
+                    PlayerPrefs.SetFloat(n_SceneTrackName, float.Parse(ui_textBestTimevalueSP.text));
+                }
+                
                 // Display a new GAME OVER panel / GAME OVER SCENE after 2 sec.
                 Invoke("ShowGameOverScene", 5f);
 

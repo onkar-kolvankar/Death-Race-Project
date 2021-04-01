@@ -634,7 +634,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GAME OVER
+  m_text: 'YOU BEST : '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5228e87c87a136b469464ad9bbe52d44, type: 2}
   m_sharedMaterial: {fileID: -5974279741069412986, guid: 5228e87c87a136b469464ad9bbe52d44,
@@ -663,8 +663,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 150
-  m_fontSizeBase: 150
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -704,9 +704,9 @@ MonoBehaviour:
   m_margin: {x: 4.3361816, y: 0, z: 1.4748535, w: -3.0605469}
   m_textInfo:
     textComponent: {fileID: 482256007}
-    characterCount: 9
+    characterCount: 11
     spriteCount: 0
-    spaceCount: 1
+    spaceCount: 3
     wordCount: 2
     linkCount: 0
     lineCount: 1
@@ -1242,6 +1242,7 @@ MonoBehaviour:
   ui_textLapvalueSP: {fileID: 1011400696987049503}
   ui_textLapvalueMP1: {fileID: 1949107341}
   ui_textLapvalueMP2: {fileID: 1583686898}
+  ui_textBestTimevalueSP: {fileID: 1011400696852999229}
   ui_textPosValueMP1: {fileID: 988993667}
   ui_textPosValueMP2: {fileID: 1723852055}
   ui_textWinLooseMsgSP: {fileID: 482256007}

@@ -15,6 +15,7 @@ public class MenuScript : MonoBehaviour
     public GameObject o_PanelModTrackSelectionMenu;
     public GameObject o_PanelModTrackSelectMP;
     public GameObject o_PanelCarSelectionMenu;
+    public GameObject o_PanelLeaderboardMenu;
 
     public RawImage o_RawImageTrackSelected;
     public RawImage o_RawImageModeSelected;
@@ -57,15 +58,23 @@ public class MenuScript : MonoBehaviour
 
     }
 
+    public void o_ShowLearderboard() {
+        o_PanelMainMenu.SetActive(false);
+        o_PanelLeaderboardMenu.SetActive(true);
+
+
+    }
+
     public void o_LoadOptionsPanel() {
         // Here we load options panel and hide main panel
         Debug.Log("Loading options panel");
     }
 
+
     public void o_ExitGame()
     {
         // Here we Exit the game.
-
+        Application.Quit();
     }
 
     // -------------------------Main menu over END------------------------------
@@ -182,7 +191,14 @@ public class MenuScript : MonoBehaviour
 
     // ------------------------- Car Selection Menu END------------------------------
 
-    
+    // -------------------------- LEADERBOARD PANEL ---------------------------------
+
+    public void o_GotoMainMenuFromLeaderboard() {
+        o_PanelLeaderboardMenu.SetActive(false);
+        o_PanelMainMenu.SetActive(true);
+    }
+
+    // -----------------------------LEADERBOARD CODE ENDS HERE ---------------------
 
 
 }
