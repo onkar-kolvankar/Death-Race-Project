@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GameStatus : MonoBehaviour
@@ -58,6 +59,11 @@ public class GameStatus : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        ui_textWinLooseMsgSP.enabled = false;
+    }
+
 
     public void CalPlayersPositions()
     {
@@ -92,13 +98,13 @@ public class GameStatus : MonoBehaviour
             Debug.Log("Inside Singleplayer condition");
             if (n_LapsCompleted[0] == n_totalLaps)
             {
-                // Display Win loose msg
+                // Display The players Best Time for now
                 ui_textWinLooseMsgSP.enabled = true;               // to disable/enable the text.
                 Debug.Log(" SINGLE PLAYER GAME OVER");
                 // Stop the car movement and Inputs
 
                 // Display a new GAME OVER panel / GAME OVER SCENE after 2 sec.
-
+                Invoke("ShowGameOverScene", 5f);
 
 
             }
@@ -120,6 +126,11 @@ public class GameStatus : MonoBehaviour
                         // set n_raceCompleted[] values
                         n_raceCompleted[i] = true;
                         // Stop you car movement and Input
+
+
+                        // Now send the user to the GameOver Scene.
+                        Invoke("ShowGameOverScene", 5f);
+
                     }
                     else if (n_raceCompleted[1 - i] == false)
                     {
@@ -160,6 +171,10 @@ public class GameStatus : MonoBehaviour
         
     }
 
+    public void ShowGameOverScene() {
+        SceneManager.LoadScene("GameOver Scene");
+    }
+
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.O)) {
@@ -195,4 +210,6 @@ public class GameStatus : MonoBehaviour
         }
 
     }
+
+
 }
