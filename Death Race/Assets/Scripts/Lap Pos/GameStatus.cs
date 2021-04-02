@@ -136,7 +136,7 @@ public class GameStatus : MonoBehaviour
                 {
                     // check if other vechile has already completed the race or not.
                     Debug.Log("n_raceCompleted[1 - i] = " + n_raceCompleted[1 - i] + " | " + "n_raceCompleted[i] = " + n_raceCompleted[i]);
-                    if (n_raceCompleted[1 - i] == true )
+                    if (n_raceCompleted[1 - i] == true && n_raceCompleted[i] == false)
                     {
                         // You have lost so it will display the "YOU LOOSE" msg.
                         ui_textWinLooseMsgMP[i].enabled = true;
