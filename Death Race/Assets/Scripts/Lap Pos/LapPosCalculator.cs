@@ -79,12 +79,17 @@ public class LapPosCalculator : MonoBehaviour
             else if (n_triggerCollided > n_nextTrigger)
             {
                 // now we will set the car to its needed collider position i.e nextTrigger
+                // we need to disable the car first so that it does not move in air while falling down at the next trigger.
+
+                gameObject.GetComponent<Rigidbody>().isKinematic = true;
 
                 GameObject nextTriggerObj = GameObject.Find(n_nextTrigger.ToString());
 
 
                 gameObject.transform.position = nextTriggerObj.transform.position;
                 gameObject.transform.rotation = nextTriggerObj.transform.rotation;
+
+                gameObject.GetComponent<Rigidbody>().isKinematic = false;
 
                 n_wrongWayCount = 0;
             }

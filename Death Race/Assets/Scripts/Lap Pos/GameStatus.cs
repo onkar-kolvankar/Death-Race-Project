@@ -107,6 +107,7 @@ public class GameStatus : MonoBehaviour
             {
                 // Stop the car movement and Inputs ------CODE HERE --------
 
+
                 // Display The players Best Time for now
                 // The Best Time of player would have been displayed on the Text in Panel so take it and set it.
                 ui_textWinLooseMsgSP.enabled= true;           // to disable/enable the text.
@@ -131,10 +132,11 @@ public class GameStatus : MonoBehaviour
         {
             for (int i = 0; i < n_totalPlayers ; i++)
             {
-                if (n_LapsCompleted[i] == n_totalLaps)
+                if (n_LapsCompleted[i] == n_totalLaps)        
                 {
                     // check if other vechile has already completed the race or not.
-                    if (n_raceCompleted[1 - i] == true)
+                    Debug.Log("n_raceCompleted[1 - i] = " + n_raceCompleted[1 - i] + " | " + "n_raceCompleted[i] = " + n_raceCompleted[i]);
+                    if (n_raceCompleted[1 - i] == true )
                     {
                         // You have lost so it will display the "YOU LOOSE" msg.
                         ui_textWinLooseMsgMP[i].enabled = true;
@@ -143,13 +145,14 @@ public class GameStatus : MonoBehaviour
                         // set n_raceCompleted[] values
                         n_raceCompleted[i] = true;
                         // Stop you car movement and Input
-
+                        // wrote the code for it in the CarMovement script.
+                        // requires addition of a Finish trigger after the start line.
 
                         // Now send the user to the GameOver Scene.
                         Invoke("ShowGameOverScene", 5f);
 
                     }
-                    else if (n_raceCompleted[1 - i] == false)
+                    else if (n_raceCompleted[1 - i] == false )
                     {
                         // you have won the race so display the 'YOU WON' msg.
                         ui_textWinLooseMsgMP[i].enabled = true;
@@ -158,7 +161,8 @@ public class GameStatus : MonoBehaviour
                         // set n_raceCompleted[] values
                         n_raceCompleted[i] = true;
                         // Stop you car movement and Input
-
+                        // wrote the code for it in the CarMovement script.
+                        // requires addition of a Finish trigger after the start line.
 
                     }
                 }

@@ -243,13 +243,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 1
+    m_Stiffness: 1.5
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+    m_Stiffness: 1.3
   m_Enabled: 1
 --- !u!1 &6414478737300216967
 GameObject:
@@ -384,13 +384,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 1
+    m_Stiffness: 1.5
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+    m_Stiffness: 1.3
   m_Enabled: 1
 --- !u!1 &6414478738181173682
 GameObject:
@@ -479,13 +479,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 1
+    m_Stiffness: 1.5
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+    m_Stiffness: 1.3
   m_Enabled: 1
 --- !u!1 &6414478738413807836
 GameObject:
@@ -540,13 +540,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 1
+    m_Stiffness: 1.5
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+    m_Stiffness: 1.3
   m_Enabled: 1
 --- !u!1 &6414478738733218527
 GameObject:
@@ -796,6 +796,7 @@ MonoBehaviour:
   o_lapRem: 3
   o_maxTorque: 1000
   o_maxSteer: 1400
+  o_brakeTorque: 1000000
   o_constantMultipleFactorTorque: 100
   o_wheelColliderLF: {fileID: 6414478737018997806}
   o_wheelColliderRF: {fileID: 6414478737756449098}
