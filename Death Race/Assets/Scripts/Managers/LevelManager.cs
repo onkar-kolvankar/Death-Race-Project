@@ -12,8 +12,6 @@ public class LevelManager : MonoBehaviour
     [SerializeField] GameObject multiPlayerPanel;
 
     [SerializeField] Transform singlePlayerSpawnPoint;
-    [SerializeField] Transform o_multiPlayerSpawnPoint1;
-    [SerializeField] Transform o_multiPlayerSpawnPoint2;
     [SerializeField] Transform[] o_multiPlayerSpawnPoints;       // array for the spawn points initialized in inspector 
 
     // Initialize the prefabs of the all cars.
