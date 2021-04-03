@@ -8961,6 +8961,7 @@ MonoBehaviour:
   o_trackImages:
   - {fileID: 2800000, guid: 2496012987f4a5a4db83661c4aad5829, type: 3}
   - {fileID: 2800000, guid: e39cdaa1cecd7c54e9e2297efc9954a8, type: 3}
+  - {fileID: 2800000, guid: 7d4e4bd42a5b3f74187408ac014dd413, type: 3}
   o_carImages:
   - {fileID: 2800000, guid: eb9bf233a387d894e903c12451f7cfb0, type: 3}
   - {fileID: 2800000, guid: 1c1c5a03496606847a382de3041ee9cd, type: 3}
@@ -9002,6 +9003,7 @@ MonoBehaviour:
   o_trackImagesMP:
   - {fileID: 2800000, guid: 2496012987f4a5a4db83661c4aad5829, type: 3}
   - {fileID: 2800000, guid: e39cdaa1cecd7c54e9e2297efc9954a8, type: 3}
+  - {fileID: 2800000, guid: 7d4e4bd42a5b3f74187408ac014dd413, type: 3}
   o_carImagesMP:
   - {fileID: 2800000, guid: eb9bf233a387d894e903c12451f7cfb0, type: 3}
   - {fileID: 2800000, guid: 1c1c5a03496606847a382de3041ee9cd, type: 3}
@@ -9021,9 +9023,11 @@ MonoBehaviour:
   n_scoreTrack:
   - {fileID: 1062388802}
   - {fileID: 1267643839}
+  - {fileID: 1698028252}
   n_trackNames:
   - Track 1
   - Track 2
+  - Track 3
 --- !u!1 &1374551489
 GameObject:
   m_ObjectHideFlags: 0
