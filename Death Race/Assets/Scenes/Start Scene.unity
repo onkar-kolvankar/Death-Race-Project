@@ -8467,7 +8467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1271309350
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8955,9 +8955,9 @@ MonoBehaviour:
   o_RawImageTrackSelected: {fileID: 1267180455}
   o_RawImageModeSelected: {fileID: 1703060249}
   o_RawImageCarSelected: {fileID: 1726712355}
-  o_TrackSelectedTextbox: {fileID: 0}
-  o_ModeSelectedTextbox: {fileID: 0}
-  o_CarSelectedTextbox: {fileID: 0}
+  o_TrackSelectedTextboxSP: {fileID: 513606162}
+  o_ModeSelectedTextboxSP: {fileID: 1733741849}
+  o_CarSelectedTextboxSP: {fileID: 123432270}
   o_trackImages:
   - {fileID: 2800000, guid: 2496012987f4a5a4db83661c4aad5829, type: 3}
   - {fileID: 2800000, guid: e39cdaa1cecd7c54e9e2297efc9954a8, type: 3}
@@ -9008,6 +9008,10 @@ MonoBehaviour:
   - {fileID: 2800000, guid: eb9bf233a387d894e903c12451f7cfb0, type: 3}
   - {fileID: 2800000, guid: 1c1c5a03496606847a382de3041ee9cd, type: 3}
   - {fileID: 2800000, guid: 69b80ee5644523b4fa6b9498f09a5dc2, type: 3}
+  o_TrackSelectedTextboxMP: {fileID: 1611885188}
+  o_ModeSelectedTextboxMP: {fileID: 2145423156}
+  o_CarSelectedTextboxMP1: {fileID: 161969136}
+  o_CarSelectedTextboxMP2: {fileID: 863699434}
 --- !u!114 &1360156214
 MonoBehaviour:
   m_ObjectHideFlags: 0

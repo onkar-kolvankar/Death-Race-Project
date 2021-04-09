@@ -23,7 +23,7 @@ public class MenuScript : MonoBehaviour
 
     // textboxes below rawImage component describing the name of the value selected
     // NOT WORKING
-    public TextMeshPro o_TrackSelectedTextbox , o_ModeSelectedTextbox , o_CarSelectedTextbox;
+    public TMP_Text o_TrackSelectedTextboxSP , o_ModeSelectedTextboxSP , o_CarSelectedTextboxSP;
 
     public Texture[] o_trackImages;
     public Texture[] o_carImages;
@@ -104,13 +104,14 @@ public class MenuScript : MonoBehaviour
 
         if (o_currentTrackTextureIndex < o_trackImages.Length - 1) {
             o_RawImageTrackSelected.texture = o_trackImages[o_currentTrackTextureIndex + 1];
-           // o_TrackSelectedTextbox.Text = o_trackImages[o_currentTrackTextureIndex + 1].name;
+            o_TrackSelectedTextboxSP.text = o_trackImages[o_currentTrackTextureIndex + 1].name;
             o_currentTrackTextureIndex ++;
         }
         else
         {
             o_currentTrackTextureIndex = 0;
             o_RawImageTrackSelected.texture = o_trackImages[o_currentTrackTextureIndex];
+            o_TrackSelectedTextboxSP.text = o_trackImages[o_currentTrackTextureIndex].name;
         }
     }
 
@@ -119,13 +120,14 @@ public class MenuScript : MonoBehaviour
         if (o_currentTrackTextureIndex > 0)
         {
             o_RawImageTrackSelected.texture = o_trackImages[o_currentTrackTextureIndex - 1];
-           // o_TrackSelectedTextbox.text = o_trackImages[o_currentTrackTextureIndex - 1].name;
+            o_TrackSelectedTextboxSP.text = o_trackImages[o_currentTrackTextureIndex - 1].name;
             o_currentTrackTextureIndex--;
         }
         else
         {
             o_currentTrackTextureIndex = o_trackImages.Length - 1;
             o_RawImageTrackSelected.texture = o_trackImages[o_currentTrackTextureIndex];
+            o_TrackSelectedTextboxSP.text = o_trackImages[o_currentTrackTextureIndex].name;
         }
 
 
@@ -145,26 +147,33 @@ public class MenuScript : MonoBehaviour
     {
         if (o_currentCarTextureIndex < o_carImages.Length - 1)
         {
-            o_RawImageCarSelected.texture = o_carImages[o_currentCarTextureIndex + 1];
             o_currentCarTextureIndex++;
+            o_RawImageCarSelected.texture = o_carImages[o_currentCarTextureIndex];
+            o_CarSelectedTextboxSP.text = o_carImages[o_currentCarTextureIndex].name;
         }
         else
         {
             o_currentCarTextureIndex = 0;
             o_RawImageCarSelected.texture = o_carImages[o_currentCarTextureIndex];
+            o_CarSelectedTextboxSP.text = o_carImages[o_currentCarTextureIndex].name;
+
         }
     }
     public void o_ShowPrevCar()
     {
         if (o_currentCarTextureIndex > 0)
         {
-            o_RawImageCarSelected.texture = o_carImages[o_currentCarTextureIndex - 1];
             o_currentCarTextureIndex--;
+            o_RawImageCarSelected.texture = o_carImages[o_currentCarTextureIndex];
+            o_CarSelectedTextboxSP.text = o_carImages[o_currentCarTextureIndex].name;
+
         }
         else
         {
             o_currentCarTextureIndex = o_carImages.Length - 1;
             o_RawImageCarSelected.texture = o_carImages[o_currentCarTextureIndex];
+            o_CarSelectedTextboxSP.text = o_carImages[o_currentCarTextureIndex].name;
+
         }
     }
 
