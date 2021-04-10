@@ -8,6 +8,7 @@ TagManager:
   - Checkpoints
   - DirectionTrigger
   - DirectionDisplay
+  - DeathTrigger
   layers:
   - Default
   - TransparentFX

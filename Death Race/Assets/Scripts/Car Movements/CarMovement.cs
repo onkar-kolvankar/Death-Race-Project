@@ -94,6 +94,8 @@ public class CarMovement : MonoBehaviour
                 o_rigidbodyCar.isKinematic = true;
             }
         }
+
+       
     }
 
     private void FixedUpdate()
@@ -109,7 +111,6 @@ public class CarMovement : MonoBehaviour
     {
         o_verticalAxisInput = Input.GetAxis(o_torqueAxis);
         o_horizontalAxisInput = Input.GetAxis(o_turningAxis);
-
         o_brakeTorqueInput = Input.GetAxis("Brake" + o_playerNumber);
     }
    

@@ -129,7 +129,51 @@ public class LapPosCalculator : MonoBehaviour
             gameStatus.CheckWiningStatus();
          }
 
+        // Here is code if the car colliders with death Trigger.
+        if (other.CompareTag("DeathTrigger"))
+        {
+
+            // Stop the car movement
+            gameObject.GetComponent<Rigidbody>().isKinematic = true;
+
+            // after 3 sec respawn it at the previous checkpoint. 
+            // 1) Reduce the Trigger collected by 1
+            // 2) Reduce the nextTrigger by 1
+            // 3) respawning it the the now nextTrigger.
 
 
-    }   
+            // Calling the RespawnPrevAtPos() using Invoke created this issue -
+            // - It would set the position of the car to the last Trigger but that trigger would not be registered.
+            // - means when player position is set to the last trigger(11 here) and he moves forward towards next trigger(12 here) he would have missed the last trigger(11 here)
+            // So calling the method directly here without any delay.
+
+            // Invoke("RespawnPrevAtPos", 2f);
+
+            RespawnPrevAtPos();
+        }
+
+
+
+
+    }
+
+    private void RespawnPrevAtPos()
+    {
+        gameObject.GetComponent<Rigidbody>().isKinematic = false;
+       /* Debug.Log("-------------------------------In RespawnPrevAtPos-------------------------------");
+        Debug.Log("------> n_nextTrigger = "+n_nextTrigger + " n_totalTriggersCollided = "+ n_totalTriggersCollided);*/
+        n_nextTrigger--;
+       /* Debug.Log("------> n_nextTrigger = " + n_nextTrigger);*/
+        n_totalTriggersCollided--;
+       /* Debug.Log("------> n_totalTriggersCollided = " + n_totalTriggersCollided);*/
+
+        GameObject nextTriggerObj = GameObject.Find(n_nextTrigger.ToString());
+
+        /*Debug.Log("------> nextTriggerObj = " + nextTriggerObj.name);*/
+
+        gameObject.transform.position = nextTriggerObj.transform.position;
+        gameObject.transform.rotation = nextTriggerObj.transform.rotation;
+
+        Debug.Log("-------------------------------RespawnPrevAtPos END------------------------------");
+    }
 }
