@@ -14979,7 +14979,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!222 &2637401604572460340
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17996,7 +17996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f05a775a94f514741b4b94ce91a58ee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  directionSignTexture: {fileID: 21300000, guid: be2a8870bc300474381d734cc18d259d,
+  directionSignTexture: {fileID: 21300000, guid: af97b30b6d7609447ad911880b1f2abb,
     type: 3}
   directionsImageSP: {fileID: 3067190328672331158}
   directionsImageMP1: {fileID: 2637401604051768883}

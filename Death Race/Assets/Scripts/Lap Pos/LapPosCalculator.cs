@@ -46,6 +46,8 @@ public class LapPosCalculator : MonoBehaviour
 
                 n_totalTriggersCollided++;
 
+                n_wrongWayCount = 0;
+
                // Debug.Log("-- n_totalTriggersCollided = "+ n_totalTriggersCollided);
                 // correct path
                 if (n_triggerCollided == 0 && n_totalTriggersCollided == n_totalTriggersInTrack)
@@ -79,6 +81,8 @@ public class LapPosCalculator : MonoBehaviour
 
                // Debug.Log("Wrong Direction");
                 n_wrongWayCount++;
+
+                // Display wrong way sign.
 
                 if (n_wrongWayCount >= 5)
                 {
