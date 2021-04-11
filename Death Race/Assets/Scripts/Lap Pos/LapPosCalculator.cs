@@ -142,22 +142,22 @@ public class LapPosCalculator : MonoBehaviour
             // 3) respawning it the the now nextTrigger.
 
 
-            // Calling the RespawnPrevAtPos() using Invoke created this issue -
+            // Calling the RespawnAtPrevPos() using Invoke created this issue -
             // - It would set the position of the car to the last Trigger but that trigger would not be registered.
             // - means when player position is set to the last trigger(11 here) and he moves forward towards next trigger(12 here) he would have missed the last trigger(11 here)
             // So calling the method directly here without any delay.
 
-            // Invoke("RespawnPrevAtPos", 2f);
+            /*-Had bug when calling RespawnAtPrevPos() while calling it from Invoke().
+                - resulted in the calling of the RespawnAtPrevPos() twice once in beginning and then after all the calculation correct calculations.
+                - which resulted in the reduction of the triggersCollected and also the nextTrigger by 1.*/
 
-            RespawnPrevAtPos();
+           // Invoke("RespawnAtPrevPos", 2f);
+
+           RespawnAtPrevPos();
         }
-
-
-
-
     }
 
-    private void RespawnPrevAtPos()
+    private void RespawnAtPrevPos()
     {
         gameObject.GetComponent<Rigidbody>().isKinematic = false;
        /* Debug.Log("-------------------------------In RespawnPrevAtPos-------------------------------");

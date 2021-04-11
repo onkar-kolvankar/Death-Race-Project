@@ -40,6 +40,8 @@ public class CarMovement : MonoBehaviour
     GameManager o_gameManager;
 
     bool isSinglePlayer;
+
+    bool o_gamePaused = false;
     
 
     private void Awake()
@@ -69,6 +71,8 @@ public class CarMovement : MonoBehaviour
         // commented to check if we can separate the lap counting code from the car code.
         //CalUpdateLapTime(); 
         GetInput();
+
+       
     }
 
     // ----------------LapTimeManager-------------
@@ -112,6 +116,7 @@ public class CarMovement : MonoBehaviour
         o_verticalAxisInput = Input.GetAxis(o_torqueAxis);
         o_horizontalAxisInput = Input.GetAxis(o_turningAxis);
         o_brakeTorqueInput = Input.GetAxis("Brake" + o_playerNumber);
+
     }
    
 
