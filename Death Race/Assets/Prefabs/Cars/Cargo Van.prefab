@@ -677,6 +677,7 @@ GameObject:
   - component: {fileID: 6560264223101266614}
   - component: {fileID: 5009844063244804818}
   - component: {fileID: 698947909584737913}
+  - component: {fileID: -7321682618688024117}
   m_Layer: 0
   m_Name: Cargo Van
   m_TagString: Player
@@ -765,7 +766,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 16
   m_CollisionDetection: 0
 --- !u!65 &6560264223101266614
 BoxCollider:
@@ -793,7 +794,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   o_playerNumber: 1
-  o_lapRem: 3
   o_maxTorque: 1000
   o_maxSteer: 1400
   o_brakeTorque: 1000000
@@ -824,6 +824,21 @@ MonoBehaviour:
   n_nextTrigger: 1
   n_wrongWayCount: 0
   n_totalTriggersCollided: 0
+--- !u!114 &-7321682618688024117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6560264223101266615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93445871b231e9b4dbf21e07066ecd37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passedTime: 0
+  o_wheelColliderLB: {fileID: 6414478738396055797}
+  o_wheelColliderRB: {fileID: 6414478738413807834}
 --- !u!1 &7125548902335552234
 GameObject:
   m_ObjectHideFlags: 0

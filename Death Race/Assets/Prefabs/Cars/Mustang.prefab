@@ -288,6 +288,7 @@ GameObject:
   - component: {fileID: 6718491885584373375}
   - component: {fileID: 3691554096174957920}
   - component: {fileID: 1896214580059153260}
+  - component: {fileID: 5631622606504096780}
   m_Layer: 0
   m_Name: Mustang
   m_TagString: Player
@@ -404,7 +405,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   o_playerNumber: 1
-  o_lapRem: 3
   o_maxTorque: 1000
   o_maxSteer: 1400
   o_brakeTorque: 1000000
@@ -435,6 +435,21 @@ MonoBehaviour:
   n_nextTrigger: 1
   n_wrongWayCount: 0
   n_totalTriggersCollided: 0
+--- !u!114 &5631622606504096780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6718491885584373373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93445871b231e9b4dbf21e07066ecd37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passedTime: 0
+  o_wheelColliderLB: {fileID: 7928560902596322774}
+  o_wheelColliderRB: {fileID: 7928560902700996616}
 --- !u!1 &7928560902261864534
 GameObject:
   m_ObjectHideFlags: 0

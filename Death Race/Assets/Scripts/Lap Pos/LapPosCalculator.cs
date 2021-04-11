@@ -42,15 +42,15 @@ public class LapPosCalculator : MonoBehaviour
 
             if (n_triggerCollided == n_nextTrigger)
             {
-                Debug.Log("In the condition n_triggerCollided = n_nextTrigger");
+              // Debug.Log("In the condition n_triggerCollided = n_nextTrigger");
 
                 n_totalTriggersCollided++;
 
-                Debug.Log("-- n_totalTriggersCollided = "+ n_totalTriggersCollided);
+               // Debug.Log("-- n_totalTriggersCollided = "+ n_totalTriggersCollided);
                 // correct path
                 if (n_triggerCollided == 0 && n_totalTriggersCollided == n_totalTriggersInTrack)
                 {
-                    Debug.Log("-- In the If condition n_triggerCollided = 0 and n_totaltriggerCollided = n_totalTriggersInTrack");
+                    //Debug.Log("-- In the If condition n_triggerCollided = 0 and n_totaltriggerCollided = n_totalTriggersInTrack");
                     // you have collided finish line after completing the track and collection all colliders -> increase Lap count
                     gameStatus.n_LapsCompleted[n_PlayerNo - 1] = gameStatus.n_LapsCompleted[n_PlayerNo - 1] + 1;
                     n_totalTriggersCollided = 0;
@@ -58,26 +58,26 @@ public class LapPosCalculator : MonoBehaviour
                 // need to save the totalTriggersCollided of each player to the Lap manager script where it will compare both players data and decide their position.
                 // Here we save it to LapPosGameStatus.cs file.
                 gameStatus.n_TriggersCollected[n_PlayerNo - 1] = n_totalTriggersCollided;
-                Debug.Log("----> n_nextTrigger = " + n_nextTrigger );
+               // Debug.Log("----> n_nextTrigger = " + n_nextTrigger );
                 n_nextTrigger++;
-                Debug.Log("----> n_nextTrigger = " + n_nextTrigger);
-                Debug.Log("----> n_totalTriggersInTrack = " + n_totalTriggersInTrack);
+               // Debug.Log("----> n_nextTrigger = " + n_nextTrigger);
+               // Debug.Log("----> n_totalTriggersInTrack = " + n_totalTriggersInTrack);
 
 
                 if (n_nextTrigger >= n_totalTriggersInTrack)
                 {
-                    Debug.Log("------ In if conditionn_nextTrigger >= n_totaltriggersInTrack");
+                   // Debug.Log("------ In if conditionn_nextTrigger >= n_totaltriggersInTrack");
 
-                    Debug.Log("------> n_nextTrigger = " + n_nextTrigger);
+                    //Debug.Log("------> n_nextTrigger = " + n_nextTrigger);
 
                     n_nextTrigger = 0;
                 }
             }
             else if (n_triggerCollided < n_nextTrigger - 1)
             {
-                Debug.Log("In the condition n_triggerCollided < n_nextTrigger");
+                //Debug.Log("In the condition n_triggerCollided < n_nextTrigger");
 
-                Debug.Log("Wrong Direction");
+               // Debug.Log("Wrong Direction");
                 n_wrongWayCount++;
 
                 if (n_wrongWayCount >= 5)
@@ -102,7 +102,7 @@ public class LapPosCalculator : MonoBehaviour
                 // now we will set the car to its needed collider position i.e nextTrigger
                 // we need to disable the car first so that it does not move in air while falling down at the next trigger.
 
-                Debug.Log("In the condition n_triggerCollided > n_nextTrigger");
+                /**/Debug.Log("In the condition n_triggerCollided > n_nextTrigger");
 
                 gameObject.GetComponent<Rigidbody>().isKinematic = true;
 
@@ -157,7 +157,7 @@ public class LapPosCalculator : MonoBehaviour
         }
     }
 
-    private void RespawnAtPrevPos()
+    public void RespawnAtPrevPos()
     {
         gameObject.GetComponent<Rigidbody>().isKinematic = false;
        /* Debug.Log("-------------------------------In RespawnPrevAtPos-------------------------------");

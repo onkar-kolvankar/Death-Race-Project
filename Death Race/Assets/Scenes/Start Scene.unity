@@ -385,7 +385,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: ee844933f749e3f44b755d07eaa74d1c, type: 3}
+  m_Texture: {fileID: 2800000, guid: d6c000115d8a8494b893d41af2cbc5c6, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1109,8 +1109,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1259,10 +1259,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0, b: 0, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.03773582, g: 0.036845826, b: 0.036845826, a: 1}
     m_PressedColor: {r: 0.9716981, g: 0.9579477, b: 0.9579477, a: 1}
-    m_SelectedColor: {r: 0, g: 0, b: 0, a: 1}
+    m_SelectedColor: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -7041,7 +7041,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 4bb2a52b7a3ad7040b093c4c1a179762, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -7247,8 +7247,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -526, y: 104}
-  m_SizeDelta: {x: 500, y: 100}
+  m_AnchoredPosition: {x: -516, y: 104}
+  m_SizeDelta: {x: 642.9646, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1062388802
 MonoBehaviour:
@@ -8327,8 +8327,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -526, y: -10}
-  m_SizeDelta: {x: 500, y: 100}
+  m_AnchoredPosition: {x: -515.99, y: -10}
+  m_SizeDelta: {x: 642.9823, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1267643839
 MonoBehaviour:
@@ -10282,8 +10282,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -526, y: -127}
-  m_SizeDelta: {x: 500, y: 100}
+  m_AnchoredPosition: {x: -515.9906, y: -127}
+  m_SizeDelta: {x: 642.9812, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1698028252
 MonoBehaviour:
@@ -13197,9 +13197,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'TIME LAPSE
-
-'
+  m_text: DUAL PLAYER
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7a610f410a21de44a84c573de955e561, type: 2}
   m_sharedMaterial: {fileID: 7426542193769037708, guid: 7a610f410a21de44a84c573de955e561,
@@ -13271,7 +13269,7 @@ MonoBehaviour:
     textComponent: {fileID: 2145423156}
     characterCount: 11
     spriteCount: 0
-    spaceCount: 2
+    spaceCount: 1
     wordCount: 2
     linkCount: 0
     lineCount: 1

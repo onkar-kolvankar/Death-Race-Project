@@ -680,6 +680,7 @@ GameObject:
   - component: {fileID: 7077449394442334678}
   - component: {fileID: 138367338}
   - component: {fileID: 4702113850965443713}
+  - component: {fileID: 3661928257533029370}
   m_Layer: 0
   m_Name: Mini Cooper
   m_TagString: Player
@@ -795,7 +796,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   o_playerNumber: 1
-  o_lapRem: 3
   o_maxTorque: 1000
   o_maxSteer: 1400
   o_brakeTorque: 1000000
@@ -826,6 +826,21 @@ MonoBehaviour:
   n_nextTrigger: 1
   n_wrongWayCount: 0
   n_totalTriggersCollided: 0
+--- !u!114 &3661928257533029370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7077449394442334676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93445871b231e9b4dbf21e07066ecd37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passedTime: 0
+  o_wheelColliderLB: {fileID: 4211986155094448649}
+  o_wheelColliderRB: {fileID: 4211986154878706049}
 --- !u!1 &7730728972912593039
 GameObject:
   m_ObjectHideFlags: 0
