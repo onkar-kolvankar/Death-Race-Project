@@ -10268,6 +10268,7 @@ MonoBehaviour:
   o_controlMenuImages:
   - {fileID: 2800000, guid: a1fbce3b6fa9fd94695e8a4f09962f2d, type: 3}
   - {fileID: 2800000, guid: 317861301947ae04d8cf7e9239024bbe, type: 3}
+  - {fileID: 2800000, guid: 229ecb8f45531b6459551601fde6f965, type: 3}
   o_currentControlImageIndex: 0
   o_prevControlBtn: {fileID: 565798902}
   o_nextControlBtn: {fileID: 156077156}
