@@ -16,10 +16,13 @@ public class MenuScript : MonoBehaviour
     public GameObject o_PanelModTrackSelectMP;
     public GameObject o_PanelCarSelectionMenu;
     public GameObject o_PanelLeaderboardMenu;
+    public GameObject o_PanelOptionsMenu;
 
     public RawImage o_RawImageTrackSelected;
     public RawImage o_RawImageModeSelected;
     public RawImage o_RawImageCarSelected;
+
+    
 
     // textboxes below rawImage component describing the name of the value selected
     // NOT WORKING
@@ -27,6 +30,22 @@ public class MenuScript : MonoBehaviour
 
     public Texture[] o_trackImages;
     public Texture[] o_carImages;
+
+    // --- This are for the Options Menu ----------
+    public GameObject o_PanelControls;
+    public GameObject o_PanelHelp;
+
+    public RawImage o_RawImageControls;
+    public Texture[] o_controlMenuImages;
+    public int o_currentControlImageIndex = 0;
+
+    [SerializeField] Button o_prevControlBtn;
+    [SerializeField] Button o_nextControlBtn;
+    [SerializeField] Button o_ShowControlsBtn;
+    [SerializeField] Button o_ShowHelpBtn;
+
+    Color showingColor = new Color(0.992156f,0.733333f,0f);
+    // ---------------------------------------------
 
     private int o_currentTrackTextureIndex = 0;
     private int o_currentCarTextureIndex = 0;
@@ -67,7 +86,8 @@ public class MenuScript : MonoBehaviour
 
     public void o_LoadOptionsPanel() {
         // Here we load options panel and hide main panel
-        Debug.Log("Loading options panel");
+        o_PanelMainMenu.SetActive(false);
+        o_PanelOptionsMenu.SetActive(true);
     }
 
 
@@ -209,5 +229,73 @@ public class MenuScript : MonoBehaviour
 
     // -----------------------------LEADERBOARD CODE ENDS HERE ---------------------
 
+    // ----------------------------- OPTIONS MENU CODE HERE ------------------------
 
+    public void o_ExitOptionsMenu() {
+        o_PanelOptionsMenu.SetActive(false);
+        o_PanelMainMenu.SetActive(true);
+    }
+
+    public void o_ShowControlsPanel() 
+    {
+        //o_ShowHelpBtn.GetComponent<Button>().colors.normalColor = Color.white;
+        o_ShowHelpBtn.GetComponent<Image>().color = Color.white;
+        try
+        {
+            o_ShowControlsBtn.GetComponent<Image>().color = showingColor;
+        }
+        catch (System.Exception )
+        {
+            throw;
+            
+        }
+        
+
+        o_PanelHelp.SetActive(false);
+        o_PanelControls.SetActive(true);
+    }
+
+    public void o_ShowHelpPanel() 
+    {
+        o_ShowHelpBtn.GetComponent<Image>().color = showingColor;
+        o_ShowControlsBtn.GetComponent<Image>().color = Color.white;
+
+        o_PanelControls.SetActive(false);
+        o_PanelHelp.SetActive(true);
+    }
+
+    public void o_NextControl() {
+        if (o_currentControlImageIndex < o_controlMenuImages.Length - 1)
+        {
+            o_currentControlImageIndex++;
+            o_RawImageControls.texture = o_controlMenuImages[o_currentControlImageIndex];
+
+            if (o_currentControlImageIndex == o_controlMenuImages.Length - 1) {
+                // Diable the Next control button.
+                o_nextControlBtn.interactable = false;
+            }
+
+            // Enable the prv control button if it is Disabled.
+            o_prevControlBtn.interactable = true;
+        }
+    }
+
+    public void o_PrevControl() {
+        if (o_currentControlImageIndex > 0) 
+        {
+            o_currentControlImageIndex--;
+            o_RawImageControls.texture = o_controlMenuImages[o_currentControlImageIndex];
+
+            if (o_currentControlImageIndex == 0)
+            {
+                // Diable the Prev control button.
+                o_prevControlBtn.interactable = false;
+            }
+
+            // Enable the prv control button if it is Disabled.
+            o_nextControlBtn.interactable = true;
+        }
+    }
+
+    // -----------------------------OPTIONS MENUE CODE END -------------------------
 }
