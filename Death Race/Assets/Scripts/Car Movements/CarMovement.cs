@@ -42,7 +42,9 @@ public class CarMovement : MonoBehaviour
     bool isSinglePlayer;
 
     bool o_gamePaused = false;
-    
+    string gameState = "NotPaused";
+
+
 
     private void Awake()
     {
@@ -53,6 +55,7 @@ public class CarMovement : MonoBehaviour
         o_gameStatus = FindObjectOfType<GameStatus>();
 
         isSinglePlayer = o_gameManager.o_gameMode.Equals("Singleplayer");
+
 
     }
 
@@ -72,7 +75,19 @@ public class CarMovement : MonoBehaviour
         //CalUpdateLapTime(); 
         GetInput();
 
-       
+       /* if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (o_gamePaused)
+            {
+                Time.timeScale = 1;
+                o_gamePaused = false;
+            }
+            else
+            {
+                Time.timeScale = 0;
+                o_gamePaused = true;
+            } 
+        }*/
     }
 
     // ----------------LapTimeManager-------------
@@ -108,6 +123,8 @@ public class CarMovement : MonoBehaviour
         AddTorqueSteer();
         AlignWheelMeshToCollider();
         AddBrakeTroqueSteer();
+
+        
 
     }
 

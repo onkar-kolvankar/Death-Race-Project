@@ -16,7 +16,6 @@ public class LapTimeManager : MonoBehaviour
 	{
 		if (lapStartTime < bestTime)
 		{
-			Debug.Log("lap time is less that best time");
 			bestTime = lapStartTime;
 		}
 
