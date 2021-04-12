@@ -112,6 +112,7 @@ public class GameStatus : MonoBehaviour
                 // The Best Time of player would have been displayed on the Text in Panel so take it and set it.
                 ui_textWinLooseMsgSP.enabled= true;           // to disable/enable the text.
                 ui_textWinLooseMsgSP.text = "YOUR TIME : " + ui_textBestTimevalueSP.text + " SECS ";
+                ui_textWinLooseMsgSP.color = Color.white;
                 Debug.Log(" SINGLE PLAYER GAME OVER");
 
                 // Store the Time in the PlayerPrefs respectively TrackName/SceneName  |  Time float
@@ -141,6 +142,8 @@ public class GameStatus : MonoBehaviour
                         // You have lost so it will display the "YOU LOOSE" msg.
                         ui_textWinLooseMsgMP[i].enabled = true;
                         ui_textWinLooseMsgMP[i].text = "YOU LOOSE!";
+                        ui_textWinLooseMsgMP[i].color = Color.white;
+
                         Debug.Log("Player " + i + 1 + " YOU LOOSE");
                         // set n_raceCompleted[] values
                         n_raceCompleted[i] = true;
@@ -157,6 +160,7 @@ public class GameStatus : MonoBehaviour
                         // you have won the race so display the 'YOU WON' msg.
                         ui_textWinLooseMsgMP[i].enabled = true;
                         ui_textWinLooseMsgMP[i].text = "YOU WON!";
+                        ui_textWinLooseMsgMP[i].color = Color.white;
                         Debug.Log("Player " + i + 1 + " YOU WON");
                         // set n_raceCompleted[] values
                         n_raceCompleted[i] = true;
@@ -196,41 +200,34 @@ public class GameStatus : MonoBehaviour
         SceneManager.LoadScene("GameOver Scene");
     }
 
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.O)) {
-            try
-            {
-                ui_textWinLooseMsgMP[0].text = "hello world";
-            }
-            catch (System.Exception e) {
-                Debug.Log("Error = " + e.Message);
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            try
-            {
-                ui_textWinLooseMsgMP[0].enabled = false;
-            }
-            catch (System.Exception e)
-            {
-                Debug.Log("Error = " + e.Message);
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            try
-            {
-                ui_textWinLooseMsgMP[0].enabled = true;
-            }
-            catch (System.Exception e)
-            {
-                Debug.Log("Error = " + e.Message);
-            }
-        }
+    public void ShowWrongWayMsg(int playerNo) {
 
+        if (n_GameManager.o_gameMode == "Singleplayer")
+        {
+            ui_textWinLooseMsgSP.text = "WRONG WAY! TURN BACK!";
+            ui_textWinLooseMsgSP.color = Color.red;
+            ui_textWinLooseMsgSP.enabled = true;
+        }
+        else if (n_GameManager.o_gameMode == "Multiplayer")
+        {
+            ui_textWinLooseMsgMP[playerNo - 1].text = "WRONG WAY! TURN BACK!";
+            ui_textWinLooseMsgMP[playerNo - 1].color = Color.red;
+            ui_textWinLooseMsgMP[playerNo - 1].enabled = true;
+        }
     }
 
+    public void DisableWrongWayMsg(int playerNo) {
+        if (n_GameManager.o_gameMode == "Singleplayer")
+        {
+           
+            ui_textWinLooseMsgSP.color = Color.white;
+            ui_textWinLooseMsgSP.enabled = false;
+        }
+        else if (n_GameManager.o_gameMode == "Multiplayer")
+        {
+            ui_textWinLooseMsgMP[playerNo - 1].color = Color.white;
+            ui_textWinLooseMsgMP[playerNo - 1].enabled = false;
+        }
+    }
 
 }

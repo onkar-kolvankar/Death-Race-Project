@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
 
 public class LapPosCalculator : MonoBehaviour
 { 
 
-    public int n_PlayerNo;          // Atached on the car prefab and it has player no as 1,2,....
+    public int n_PlayerNo;          // Atached on the car prefab via LevelManager.cs and it has player no as 1,2,....
     int n_totalTriggersInTrack;
 
     public int n_prevTrigger;
@@ -14,8 +17,12 @@ public class LapPosCalculator : MonoBehaviour
     public int n_wrongWayCount;
     public int n_totalTriggersCollided;
 
+    private string n_gameMode;
+
     GameStatus gameStatus;
     GameManager gameManager;
+
+ 
 
     private void Awake()
     {
@@ -29,20 +36,34 @@ public class LapPosCalculator : MonoBehaviour
     private void Start() {
         gameStatus = FindObjectOfType<GameStatus>();
         n_totalTriggersInTrack = gameStatus.n_totalTriggersInTrack;
-        Debug.Log("Total Triggers in Track : Awake() - " + n_totalTriggersInTrack);
+        //   Debug.Log("Total Triggers in Track : Awake() - " + n_totalTriggersInTrack);
+        n_gameMode = gameManager.o_gameMode;
     }
     private void OnTriggerEnter(Collider other)
     {
          //if (gameManager.o_gameMode == "Multiplayer" && other.gameObject.CompareTag("Checkpoints"))
          if (other.gameObject.CompareTag("Checkpoints"))
-
          {
         
             int n_triggerCollided = int.Parse(other.gameObject.name.ToString());
 
+            if (n_triggerCollided == n_prevTrigger + 1) {
+                // Diable the wrong way msg
+                gameStatus.DisableWrongWayMsg(n_PlayerNo);
+                if (n_wrongWayCount > 0) {
+                    n_wrongWayCount--;
+                }
+                
+            }
+
+            n_prevTrigger = n_triggerCollided;
+
             if (n_triggerCollided == n_nextTrigger)
             {
-              // Debug.Log("In the condition n_triggerCollided = n_nextTrigger");
+                // Debug.Log("In the condition n_triggerCollided = n_nextTrigger");
+
+
+                gameStatus.DisableWrongWayMsg(n_PlayerNo);
 
                 n_totalTriggersCollided++;
 
@@ -82,19 +103,17 @@ public class LapPosCalculator : MonoBehaviour
                // Debug.Log("Wrong Direction");
                 n_wrongWayCount++;
 
-                // Display wrong way sign.
+                // Display wrong way txt.
+                gameStatus.ShowWrongWayMsg(n_PlayerNo);
 
                 if (n_wrongWayCount >= 5)
                 {
-                    // now we will set the car to its needed collider position i.e nextTrigger
+                    // Now we need to respawn the car to the prev checkpoint/trigger.
 
-                    GameObject nextTriggerObj = GameObject.Find(n_nextTrigger.ToString());
-                    
+                    RespawnAtPrevPos();
 
-                    gameObject.transform.position = nextTriggerObj.transform.position;
-                    gameObject.transform.rotation = nextTriggerObj.transform.rotation;
-
-                    n_wrongWayCount = 0;
+                    // Disable wrong way text.
+                    gameStatus.DisableWrongWayMsg(n_PlayerNo);
 
                 }
             }
@@ -160,6 +179,7 @@ public class LapPosCalculator : MonoBehaviour
            RespawnAtPrevPos();
         }
     }
+
 
     public void RespawnAtPrevPos()
     {

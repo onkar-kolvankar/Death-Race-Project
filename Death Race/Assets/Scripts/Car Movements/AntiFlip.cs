@@ -28,7 +28,7 @@ public class AntiFlip : MonoBehaviour
              - this would have been considered as the vechile stuck thus used the last brakeTorque == 0 condition.
 
         */
-        if (rb.velocity.magnitude < 0.009f && o_wheelColliderLB.motorTorque != 0 && o_wheelColliderLB.brakeTorque == 0)
+        if (rb.velocity.magnitude < 0.015f && o_wheelColliderLB.motorTorque != 0 && o_wheelColliderLB.brakeTorque == 0)
         {
            // Debug.Log("rb.velocity.magnitude == 0");
             if (rb.transform.up.y < 1f && passedTime >= 3f)
@@ -36,7 +36,7 @@ public class AntiFlip : MonoBehaviour
                 //gameObject.transform.position += Vector3.up;
                 //gameObject.transform.rotation = Quaternion.LookRotation(gameObject.transform.forward * Time.deltaTime);
 
-                //Debug.Log("rb.transform.up.y = " + rb.transform.up.y);
+               // Debug.Log("rb.transform.up.y = " + rb.transform.up.y);
 
                 lapPosCalculator.RespawnAtPrevPos();
 
@@ -56,7 +56,7 @@ public class AntiFlip : MonoBehaviour
             }
         }
         else {
-            //Debug.Log("rb.velocity.magnitude = " + rb.velocity.magnitude);
+           // Debug.Log("rb.velocity.magnitude = " + rb.velocity.magnitude + "  o_wheelColliderLB.motorTorque = " + o_wheelColliderLB.motorTorque);
             passedTime = 0f;
         }
         
