@@ -19,7 +19,7 @@ public class CarMovement : MonoBehaviour
     float o_verticalAxisInput, o_horizontalAxisInput , o_brakeTorqueInput;
     [SerializeField] float o_maxTorque = 1000f;
     [SerializeField] float o_maxSteer = 1400f;
-    [SerializeField] int o_brakeTorque = 1000;
+    [SerializeField] int o_brakeTorque = 1000000;
 
     [SerializeField] float o_constantMultipleFactorTorque = 100f;
 
@@ -122,6 +122,9 @@ public class CarMovement : MonoBehaviour
 
     private void AddTorqueSteer()
     {
+       /* o_wheelColliderLF.motorTorque = o_verticalAxisInput * o_maxTorque * Time.deltaTime * o_constantMultipleFactorTorque;
+        o_wheelColliderRF.motorTorque = o_verticalAxisInput * o_maxTorque * Time.deltaTime * o_constantMultipleFactorTorque;*/
+
         o_wheelColliderLB.motorTorque = o_verticalAxisInput * o_maxTorque * Time.deltaTime * o_constantMultipleFactorTorque;
         o_wheelColliderRB.motorTorque = o_verticalAxisInput * o_maxTorque * Time.deltaTime * o_constantMultipleFactorTorque;
 

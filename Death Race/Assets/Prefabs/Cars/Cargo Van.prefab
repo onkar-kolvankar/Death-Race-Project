@@ -796,7 +796,7 @@ MonoBehaviour:
   o_playerNumber: 1
   o_maxTorque: 1000
   o_maxSteer: 1400
-  o_brakeTorque: 1000000
+  o_brakeTorque: 1000000000
   o_constantMultipleFactorTorque: 100
   o_wheelColliderLF: {fileID: 6414478737018997806}
   o_wheelColliderRF: {fileID: 6414478737756449098}
@@ -819,7 +819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85fcd08b7b77b754eb93e73681533184, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  n_PlayerNo: 0
+  n_PlayerNo: 1
   n_prevTrigger: 0
   n_nextTrigger: 1
   n_wrongWayCount: 0
